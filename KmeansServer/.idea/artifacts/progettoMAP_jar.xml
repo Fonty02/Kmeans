@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="progettoMAP:jar">
+    <output-path>$PROJECT_DIR$/out</output-path>
+    <root id="archive" name="progettoMAP.jar">
+      <element id="module-output" name="progettoMAP" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../../Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-j-8.0.31.jar" path-in-jar="/" />
+      <element id="archive" name="kmeans.jar" />
+    </root>
+  </artifact>
+</component>
