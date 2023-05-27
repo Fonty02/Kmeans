@@ -16,20 +16,27 @@ public class Data {
         DbAccess dbAccess = new DbAccess(server, port, database, user_id, password);
         dbAccess.initConnection();
         TableData tableData = new TableData(dbAccess);
-        data = tableData.getDistinctTransazioni(table);
-        numberOfExamples = data.size();
-        TableSchema tableSchema = new TableSchema(dbAccess, table);
-        for (int i = 0; i < tableSchema.getNumberOfAttributes(); i++) {
-            TableSchema.Column column = tableSchema.getColumn(i);
-            if (column.isNumber()) {
-                double min = (Double) tableData.getAggregateColumnValue(table, column, QUERY_TYPE.MIN);
-                double max = (Double) tableData.getAggregateColumnValue(table, column, QUERY_TYPE.MAX);
-                attributeSet.add(new ContinuousAttribute(column.getColumnName(), i, min, max));
-            } else {
-                String[] values = new String[tableData.getDistinctColumnValues(table, column).size()];
-                tableData.getDistinctColumnValues(table, column).toArray(values);
-                attributeSet.add(new DiscreteAttribute(column.getColumnName(), i, values));
+        try {
+            data = tableData.getDistinctTransazioni(table);
+            numberOfExamples = data.size();
+            TableSchema tableSchema = new TableSchema(dbAccess, table);
+            for (int i = 0; i < tableSchema.getNumberOfAttributes(); i++) {
+                TableSchema.Column column = tableSchema.getColumn(i);
+                if (column.isNumber()) {
+                    double min = (Double) tableData.getAggregateColumnValue(table, column, QUERY_TYPE.MIN);
+                    double max = (Double) tableData.getAggregateColumnValue(table, column, QUERY_TYPE.MAX);
+                    attributeSet.add(new ContinuousAttribute(column.getColumnName(), i, min, max));
+                } else {
+                    String[] values = new String[tableData.getDistinctColumnValues(table, column).size()];
+                    tableData.getDistinctColumnValues(table, column).toArray(values);
+                    attributeSet.add(new DiscreteAttribute(column.getColumnName(), i, values));
+                }
             }
+        }catch (SQLException e){
+            if(e.getErrorCode()==1146)
+                throw new SQLException("Tabella non esistente");
+            else
+                throw e;
         }
         dbAccess.closeConnection();
     }

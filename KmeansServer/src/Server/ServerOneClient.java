@@ -67,12 +67,8 @@ class ServerOneClient extends Thread {
                     }
                     try {
                         data = new Data(server, portaDatabase, db, user, pass, tablename);
-                    } catch (NoValueException | DatabaseConnectionException | EmptySetException e) {
+                    } catch (NoValueException | DatabaseConnectionException | EmptySetException | SQLException e) {
                         result = "SI E' VERIFICATO UN ERRORE DURANTE L'INTERROGAZIONE AL DATABASE->" + e.getMessage();
-                    } catch (SQLException e) {
-                        String error = "";
-                        if (e.getErrorCode() == 1146) error += "Tabella non esistente";
-                        result = "SI E' VERIFICATO UN ERRORE DURANTE L'INTERROGAZIONE AL DATABASE->" + error;
                     }
                     try {
                         out.writeObject(result);
