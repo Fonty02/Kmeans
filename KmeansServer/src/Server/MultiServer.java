@@ -28,8 +28,9 @@ class MultiServer {
                 }
             }
         } catch (IOException e) {
-                System.err.println("Porta occupata");
-                System.exit(1);
+            e.printStackTrace();
+            System.err.println("Porta occupata");
+            System.exit(1);
         }
     }
 

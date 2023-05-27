@@ -14,7 +14,7 @@ public class ClusterSet implements Serializable {
         try {
             C = new Cluster[k];
         } catch (NegativeArraySizeException e) {
-            throw new OutOfRangeSampleSize("Valore di k non valido");
+            throw new OutOfRangeSampleSize("Numero di cluster non valido, deve essere maggiore di 0");
         }
     }
 
