@@ -2,6 +2,7 @@ package mining;
 
 import data.Data;
 import data.Tuple;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,32 +12,26 @@ class Cluster implements Serializable {
 
     private final Set<Integer> clusteredData;
 
-
     Cluster(Tuple centroid) {
         this.centroid = centroid;
         clusteredData = new HashSet<Integer>();
-
     }
 
     Tuple getCentroid() {
         return centroid;
     }
 
-
     //determina il nuovo centroide
     //dato che lavoriamo con le stringhe è la "tupla" con i valori che si ripetono di piu
     void computeCentroid(Data data) {
-
         for (int i = 0; i < centroid.getLength(); i++) {
             centroid.get(i).update(data, clusteredData);
         }
-
     }
 
     //return true if the tuple is changing cluster
     boolean addData(int id) {
         return clusteredData.add(id);
-
     }
 
     //verifica se una transazione � clusterizzata nellarray corrente
@@ -44,11 +39,9 @@ class Cluster implements Serializable {
         return clusteredData.contains(id);
     }
 
-
     //remove the tuplethat has changed the cluster
     void removeTuple(int id) {
         clusteredData.remove(id);
-
     }
 
     public String toString() {
@@ -57,9 +50,7 @@ class Cluster implements Serializable {
             str += centroid.get(i);
         str += ")";
         return str;
-
     }
-
 
     public String toString(Data data) {
         String str = "Centroid=(";
@@ -74,7 +65,6 @@ class Cluster implements Serializable {
         }
         str += "AvgDistance=" + getCentroid().avgDistance(data, clusteredData) + "\n";
         return str;
-
     }
 
 }

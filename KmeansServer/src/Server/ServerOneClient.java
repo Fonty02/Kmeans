@@ -52,7 +52,7 @@ class ServerOneClient extends Thread {
                 return;
             }
             switch (choice) {
-                case 0 -> {// Carica Dati da zero
+                case 0 -> { // Carica Dati da zero
                     String result = "OK";
                     try {
                         server = (String) in.readObject();
@@ -159,6 +159,5 @@ class ServerOneClient extends Thread {
             }
         }
     }
+
 }
-
-

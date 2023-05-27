@@ -12,9 +12,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class TableData {
-
     private final DbAccess db;
-
 
     public TableData(DbAccess db) {
         this.db = db;
@@ -43,7 +41,6 @@ public class TableData {
             throw new EmptySetException("RESULT SET VUOTO");
         return list;
     }
-
 
     public Set<Object> getDistinctColumnValues(String table, Column column) throws SQLException {
         Set<Object> values = new TreeSet<>();
@@ -79,6 +76,5 @@ public class TableData {
             throw new NoValueException("NESSUN VALORE DISPONIBILE");
         return o;
     }
-
 
 }

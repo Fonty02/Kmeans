@@ -1,6 +1,5 @@
 package data;
 
-
 import database.*;
 
 import java.sql.SQLException;
@@ -32,11 +31,9 @@ public class Data {
                     attributeSet.add(new DiscreteAttribute(column.getColumnName(), i, values));
                 }
             }
-        }catch (SQLException e){
-            if(e.getErrorCode()==1146)
-                throw new SQLException("Tabella non esistente");
-            else
-                throw e;
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 1146) throw new SQLException("Tabella non esistente");
+            else throw e;
         }
         dbAccess.closeConnection();
     }
@@ -89,7 +86,7 @@ public class Data {
         if (k <= 0 || k > data.size())
             throw new OutOfRangeSampleSize("Numero di cluster non valido, deve essere compreso tra 1 e " + data.size());
         int[] centroidIndexes = new int[k];
-//choose k random different centroids in data.
+        //choose k random different centroids in data.
         Random rand = new Random();
         rand.setSeed(System.currentTimeMillis());
         for (int i = 0; i < k; i++) {
@@ -98,7 +95,7 @@ public class Data {
             do {
                 found = false;
                 c = rand.nextInt(getNumberOfExamples());
-// verify that centroid[c] is not equal to a centroide already stored in CentroidIndexes
+                // verify that centroid[c] is not equal to a centroide already stored in CentroidIndexes
                 for (int j = 0; j < i; j++)
                     if (compare(centroidIndexes[j], c)) {
                         found = true;

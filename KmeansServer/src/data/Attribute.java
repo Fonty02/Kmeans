@@ -8,9 +8,9 @@ abstract class Attribute implements Serializable {
 
     Attribute(String name, int index) {
         this.name = name;  //nome simbolico
-        this.index = index; //identificativo (posizione) numerica allintenro del dataset
+        this.index = index; //identificativo (posizione) numerica all'interno del dataset
 
-        //esempio: playTennis - 4 (nome attributo e poisizione nel dataset)
+        //esempio: playTennis - 4 (nome attributo e posizione nel dataset)
     }
 
     String getName() {

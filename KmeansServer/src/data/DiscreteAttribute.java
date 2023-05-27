@@ -22,8 +22,7 @@ class DiscreteAttribute extends Attribute implements Iterable<String> {
     int frequency(Data data, Set<Integer> idList, String v) {
         int count = 0;
         for (int i : idList) {
-            if (data.getAttributeValue(i, this.getIndex()).equals(v))
-                count++;
+            if (data.getAttributeValue(i, this.getIndex()).equals(v)) count++;
         }
         return count;
     }

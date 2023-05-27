@@ -23,7 +23,6 @@ abstract public class Item implements Serializable {
 
     abstract double distance(Object a);
 
-
     //Modifica il membro value, assegnandogli il valore restituito da data.computePrototype(clusteredData,attribute);
     public void update(Data data, Set<Integer> clusteredData) {
         this.value = data.computePrototype(clusteredData, this.attribute);

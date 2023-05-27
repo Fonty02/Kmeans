@@ -23,7 +23,6 @@ public class ClusterSet implements Serializable {
         i++;
     }
 
-
     void initializeCentroids(Data data) throws OutOfRangeSampleSize {
         //indici casuali
         int[] centroidIndexes = data.sampling(C.length);
@@ -79,6 +78,5 @@ public class ClusterSet implements Serializable {
         }
         return str;
     }
-
 
 }
