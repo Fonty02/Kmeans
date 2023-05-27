@@ -14,7 +14,7 @@ class Cluster implements Serializable {
 
     Cluster(Tuple centroid) {
         this.centroid = centroid;
-        clusteredData = new HashSet<Integer>();
+        clusteredData = new HashSet<>();
     }
 
     Tuple getCentroid() {
@@ -34,12 +34,12 @@ class Cluster implements Serializable {
         return clusteredData.add(id);
     }
 
-    //verifica se una transazione � clusterizzata nellarray corrente
+    //verifica se una transazione è clusterizzata nell'array corrente
     boolean contain(int id) {
         return clusteredData.contains(id);
     }
 
-    //remove the tuplethat has changed the cluster
+    //remove the tuple that has changed the cluster
     void removeTuple(int id) {
         clusteredData.remove(id);
     }

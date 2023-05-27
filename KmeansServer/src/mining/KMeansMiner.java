@@ -26,10 +26,10 @@ public class KMeansMiner {
         int numberOfIterations = 0;
         //STEP 1. Scelta casuale di centroidi per k clusters
         C.initializeCentroids(data);
-        boolean changedCluster = false;
+        boolean changedCluster;
         do {
             numberOfIterations++;
-            //STEP 2. Assegnazione di ciascuna riga della matrice in data al cluster avente centroide più vicino allesempio
+            //STEP 2. Assegnazione di ciascuna riga della matrice in data al cluster avente centroide più vicino all'esempio
             changedCluster = false;
             for (int i = 0; i < data.getNumberOfExamples(); i++) {
                 Cluster nearestCluster = C.nearestCluster(data.getItemSet(i));

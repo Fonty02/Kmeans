@@ -6,11 +6,11 @@ import java.util.Set;
 import java.util.TreeSet;
 
 class DiscreteAttribute extends Attribute implements Iterable<String> {
-    private final TreeSet<String> values; //possibili valori del dominio dellattributo. ES: per playTennis abbiamo yes o no
+    private final TreeSet<String> values; //Possibili valori del dominio dell'attributo. ES: per playTennis abbiamo yes o no
 
     DiscreteAttribute(String name, int index, String[] values) {
         super(name, index);
-        this.values = new TreeSet<String>();
+        this.values = new TreeSet<>();
         Collections.addAll(this.values, values);
     }
 

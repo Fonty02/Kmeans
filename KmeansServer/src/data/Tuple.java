@@ -30,7 +30,7 @@ public class Tuple implements Serializable {
         return distance;
     }
 
-    // media delle distanza tra la tupla corrente e tutte le tuple ottenibili dalle righe del dataset data aventi indice di righe in clusteredData
+    // media delle distanze tra la tupla corrente e tutte le tuple ottenibili dalle righe del dataset data aventi indice di righe in clusteredData
     public double avgDistance(Data data, Set<Integer> clusteredData) {
         double p, sumD = 0.0;
         for (int i : clusteredData) {

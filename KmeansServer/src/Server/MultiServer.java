@@ -17,7 +17,7 @@ class MultiServer {
         try {
             serverSocket = new ServerSocket(PORT);
             while (true) {
-                Socket socket = null;
+                Socket socket;
                 try {
                     socket = serverSocket.accept();
                     new ServerOneClient(socket);
@@ -35,7 +35,7 @@ class MultiServer {
     }
 
     public static void main(String[] args) {
-        MultiServer multiServer = new MultiServer(8080);
+        new MultiServer(8080);
     }
 
 }

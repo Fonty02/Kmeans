@@ -68,7 +68,7 @@ public class Data {
         return s;
     }
 
-    //restutuisce la tupla sullindice di riga index
+    //restituisce la tupla sull'indice di riga index
     public Tuple getItemSet(int index) {
         Tuple tuple = new Tuple(attributeSet.size());
         for (Attribute at : attributeSet) {
@@ -90,7 +90,7 @@ public class Data {
         Random rand = new Random();
         rand.setSeed(System.currentTimeMillis());
         for (int i = 0; i < k; i++) {
-            boolean found = false;
+            boolean found;
             int c;
             do {
                 found = false;
