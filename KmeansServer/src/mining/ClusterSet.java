@@ -65,7 +65,7 @@ public class ClusterSet implements Serializable {
     public String toString() {
         String str = "";
         for (Cluster cluster : C) {
-            str += " " + cluster.toString() + "\n";
+            str += cluster.toString() + "\n";
         }
         return str;
     }

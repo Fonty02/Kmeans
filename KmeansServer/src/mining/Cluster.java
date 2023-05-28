@@ -47,7 +47,7 @@ class Cluster implements Serializable {
     public String toString() {
         String str = "Centroid=(";
         for (int i = 0; i < centroid.getLength(); i++)
-            str += centroid.get(i);
+            str += centroid.get(i) + (i==centroid.getLength()-1?"":" ");
         str += ")";
         return str;
     }
@@ -55,12 +55,12 @@ class Cluster implements Serializable {
     public String toString(Data data) {
         String str = "Centroid=(";
         for (int i = 0; i < centroid.getLength(); i++)
-            str += centroid.get(i) + " ";
+            str += centroid.get(i) + (i==centroid.getLength()-1?"":" ");
         str += ")\nExamples:\n";
         for (int i : clusteredData) {
             str += "[";
             for (int j = 0; j < data.getNumberOfAttributes(); j++)
-                str += data.getAttributeValue(i, j) + " ";
+                str += data.getAttributeValue(i, j) + (j==data.getNumberOfAttributes()-1?"":" ");
             str += "] dist=" + getCentroid().getDistance(data.getItemSet(i)) + "\n";
         }
         str += "AvgDistance=" + getCentroid().avgDistance(data, clusteredData) + "\n";
