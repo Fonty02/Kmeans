@@ -1,6 +1,6 @@
-package Server;
+package server;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -35,6 +35,14 @@ class MultiServer {
     }
 
     public static void main(String[] args) {
+        try {
+            System.setErr(new PrintStream(new BufferedOutputStream(new FileOutputStream("Logs/log.txt")), true));
+        } catch (IOException e) {
+            System.err.println("Impossibile accedere al file di log");
+            e.printStackTrace();
+            System.err.println();
+            return;
+        }
         new MultiServer(8080);
     }
 

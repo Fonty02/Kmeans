@@ -1,4 +1,4 @@
-package Server;
+package server;
 
 import data.Data;
 import data.OutOfRangeSampleSize;
@@ -34,6 +34,7 @@ class ServerOneClient extends Thread {
         } catch (IOException e) {
             System.err.println("Errore nella chiusura della comunicazione");
             e.printStackTrace();
+            System.err.println();
         }
     }
 
@@ -48,6 +49,7 @@ class ServerOneClient extends Thread {
             } catch (IOException | ClassNotFoundException | ClassCastException e) {
                 System.err.println("Errore nella comunicazione");
                 e.printStackTrace();
+                System.err.println();
                 this.closeConnection();
                 return;
             }
@@ -64,6 +66,7 @@ class ServerOneClient extends Thread {
                     } catch (IOException | ClassNotFoundException | ClassCastException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         this.closeConnection();
                     }
                     try {
@@ -71,12 +74,14 @@ class ServerOneClient extends Thread {
                     } catch (NoValueException | DatabaseConnectionException | EmptySetException | SQLException e) {
                         result = "SI E' VERIFICATO UN ERRORE DURANTE L'INTERROGAZIONE AL DATABASE -> " + e.getMessage();
                         e.printStackTrace();
+                        System.err.println();
                     }
                     try {
                         out.writeObject(result);
                     } catch (IOException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         return;
                     }
 
@@ -88,6 +93,7 @@ class ServerOneClient extends Thread {
                     } catch (IOException | ClassNotFoundException | ClassCastException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         this.closeConnection();
                         return;
                     }
@@ -97,6 +103,7 @@ class ServerOneClient extends Thread {
                     } catch (OutOfRangeSampleSize e) {
                         result = "ERRORE NEL NUMERO DEI CLUSTER -> " + e.getMessage();
                         e.printStackTrace();
+                        System.err.println();
                     }
                     try {
                         out.writeObject(result);
@@ -107,6 +114,7 @@ class ServerOneClient extends Thread {
                     } catch (IOException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         return;
                     }
                 }
@@ -118,12 +126,14 @@ class ServerOneClient extends Thread {
                     } catch (IOException e) {
                         result = "Impossibile effettuare salvataggio su file";
                         e.printStackTrace();
+                        System.err.println();
                     }
                     try {
                         out.writeObject(result);
                     } catch (IOException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         return;
                     }
                 }
@@ -136,6 +146,7 @@ class ServerOneClient extends Thread {
                     } catch (IOException | ClassNotFoundException | NullPointerException | ClassCastException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         this.closeConnection();
                         return;
                     }
@@ -145,6 +156,7 @@ class ServerOneClient extends Thread {
                     } catch (IOException | ClassNotFoundException e) {
                         result = "Impossibile caricare il salvataggio";
                         e.printStackTrace();
+                        System.err.println();
                     }
                     try {
                         out.writeObject(result);
@@ -154,6 +166,7 @@ class ServerOneClient extends Thread {
                     } catch (IOException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                     }
                 }
             }
