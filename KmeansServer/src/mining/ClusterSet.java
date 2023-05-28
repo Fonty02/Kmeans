@@ -14,7 +14,7 @@ public class ClusterSet implements Serializable {
         try {
             C = new Cluster[k];
         } catch (NegativeArraySizeException e) {
-            throw new OutOfRangeSampleSize("Valore di k non valido");
+            throw new OutOfRangeSampleSize("Numero di cluster non valido, deve essere maggiore di 0");
         }
     }
 
@@ -22,7 +22,6 @@ public class ClusterSet implements Serializable {
         C[i] = c;
         i++;
     }
-
 
     void initializeCentroids(Data data) throws OutOfRangeSampleSize {
         //indici casuali
@@ -66,7 +65,7 @@ public class ClusterSet implements Serializable {
     public String toString() {
         String str = "";
         for (Cluster cluster : C) {
-            str += " " + cluster.toString() + "\n";
+            str += cluster.toString() + "\n";
         }
         return str;
     }
@@ -79,6 +78,5 @@ public class ClusterSet implements Serializable {
         }
         return str;
     }
-
 
 }

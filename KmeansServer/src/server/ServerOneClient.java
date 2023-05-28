@@ -1,4 +1,4 @@
-package Server;
+package server;
 
 import data.Data;
 import data.OutOfRangeSampleSize;
@@ -6,6 +6,7 @@ import database.DatabaseConnectionException;
 import database.EmptySetException;
 import database.NoValueException;
 import mining.KMeansMiner;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -18,7 +19,7 @@ class ServerOneClient extends Thread {
     private final ObjectInputStream in;
     private KMeansMiner kmeans;
 
-     ServerOneClient(Socket socket) throws IOException {
+    ServerOneClient(Socket socket) throws IOException {
         this.socket = socket;
         out = new ObjectOutputStream(socket.getOutputStream());
         in = new ObjectInputStream(socket.getInputStream());
@@ -31,7 +32,9 @@ class ServerOneClient extends Thread {
             socket.close();
             System.out.println("Comunicazione chiusa con " + user);
         } catch (IOException e) {
+            System.err.println("Errore nella chiusura della comunicazione");
             e.printStackTrace();
+            System.err.println();
         }
     }
 
@@ -46,12 +49,12 @@ class ServerOneClient extends Thread {
             } catch (IOException | ClassNotFoundException | ClassCastException e) {
                 System.err.println("Errore nella comunicazione");
                 e.printStackTrace();
+                System.err.println();
                 this.closeConnection();
                 return;
             }
             switch (choice) {
-                case 0 -> // Carica Dati da zero
-                {
+                case 0 -> { // Carica Dati da zero
                     String result = "OK";
                     try {
                         server = (String) in.readObject();
@@ -60,25 +63,25 @@ class ServerOneClient extends Thread {
                         tablename = (String) in.readObject();
                         user = (String) in.readObject();
                         pass = (String) in.readObject();
-                    } catch (IOException | ClassNotFoundException  | ClassCastException e ) {
+                    } catch (IOException | ClassNotFoundException | ClassCastException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         this.closeConnection();
                     }
                     try {
                         data = new Data(server, portaDatabase, db, user, pass, tablename);
-                    } catch (NoValueException | DatabaseConnectionException | EmptySetException e) {
-                        result = "SI E' VERIFICATO UN ERRORE DURANTE L'INTERROGAZIONE AL DATABASE->" + e.getMessage();
-                    } catch (SQLException e) {
-                        String error = "";
-                        if (e.getErrorCode() == 1146) error += "Tabella non esistente";
-                        result = "SI E' VERIFICATO UN ERRORE DURANTE L'INTERROGAZIONE AL DATABASE->" + error;
+                    } catch (NoValueException | DatabaseConnectionException | EmptySetException | SQLException e) {
+                        result = "SI E' VERIFICATO UN ERRORE DURANTE L'INTERROGAZIONE AL DATABASE -> " + e.getMessage();
+                        e.printStackTrace();
+                        System.err.println();
                     }
                     try {
                         out.writeObject(result);
                     } catch (IOException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         return;
                     }
 
@@ -90,6 +93,7 @@ class ServerOneClient extends Thread {
                     } catch (IOException | ClassNotFoundException | ClassCastException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         this.closeConnection();
                         return;
                     }
@@ -97,7 +101,9 @@ class ServerOneClient extends Thread {
                         kmeans = new KMeansMiner(k);
                         numIter = kmeans.kmeans(data);
                     } catch (OutOfRangeSampleSize e) {
-                        result = "ERRORE NEL NUMERO DEI CLUSTER->" + e.getMessage();
+                        result = "ERRORE NEL NUMERO DEI CLUSTER -> " + e.getMessage();
+                        e.printStackTrace();
+                        System.err.println();
                     }
                     try {
                         out.writeObject(result);
@@ -108,22 +114,26 @@ class ServerOneClient extends Thread {
                     } catch (IOException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         return;
                     }
                 }
                 case 2 -> {
                     String result = "OK";
-                    filename =  "Salvataggi\\"+db + tablename + k + ".dat";
+                    filename = "Salvataggi\\" + db + tablename + k + ".dat";
                     try {
                         kmeans.salva(filename);
                     } catch (IOException e) {
                         result = "Impossibile effettuare salvataggio su file";
+                        e.printStackTrace();
+                        System.err.println();
                     }
                     try {
                         out.writeObject(result);
                     } catch (IOException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         return;
                     }
                 }
@@ -136,6 +146,7 @@ class ServerOneClient extends Thread {
                     } catch (IOException | ClassNotFoundException | NullPointerException | ClassCastException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
+                        System.err.println();
                         this.closeConnection();
                         return;
                     }
@@ -144,6 +155,8 @@ class ServerOneClient extends Thread {
                         kmeans = new KMeansMiner(filename);
                     } catch (IOException | ClassNotFoundException e) {
                         result = "Impossibile caricare il salvataggio";
+                        e.printStackTrace();
+                        System.err.println();
                     }
                     try {
                         out.writeObject(result);
@@ -153,12 +166,11 @@ class ServerOneClient extends Thread {
                     } catch (IOException e) {
                         System.err.println("Errore nella comunicazione");
                         e.printStackTrace();
-
+                        System.err.println();
                     }
                 }
             }
         }
     }
+
 }
-
-

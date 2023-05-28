@@ -8,4 +8,5 @@ class ContinuousItem extends Item {
     double distance(Object a) {
         return Math.abs(((ContinuousAttribute) this.attribute).getScaledValue((Double) value) - ((ContinuousAttribute) this.attribute).getScaledValue((Double) a));
     }
+
 }

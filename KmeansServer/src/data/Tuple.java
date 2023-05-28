@@ -6,7 +6,7 @@ import java.util.Set;
 public class Tuple implements Serializable {
     private Item[] tuple; //è una tupla del database, quindi un insieme di Attributi (nome e index) e valore
 
-     Tuple(int size) {
+    Tuple(int size) {
         tuple = new Item[size];
     }
 
@@ -22,7 +22,6 @@ public class Tuple implements Serializable {
         tuple[i] = c;
     }
 
-
     //distanza tra la tupla passata come parametro e la tupla corrente che richiama il metodo
     public double getDistance(Tuple obj) {
         double distance = 0;
@@ -31,8 +30,7 @@ public class Tuple implements Serializable {
         return distance;
     }
 
-
-    // media delle distanza tra la tupla corrente e tutte le tuple ottenibili dalle righe del dataset data aventi indice di righe in clusteredData
+    // media delle distanze tra la tupla corrente e tutte le tuple ottenibili dalle righe del dataset data aventi indice di righe in clusteredData
     public double avgDistance(Data data, Set<Integer> clusteredData) {
         double p, sumD = 0.0;
         for (int i : clusteredData) {
@@ -42,4 +40,5 @@ public class Tuple implements Serializable {
         p = sumD / clusteredData.size();
         return p;
     }
+
 }

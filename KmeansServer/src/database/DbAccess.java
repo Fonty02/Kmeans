@@ -30,7 +30,7 @@ public class DbAccess {
         } catch (ClassNotFoundException e) {
             throw new DatabaseConnectionException("ERRORE DI DRIVER NEL SERVER");
         } catch (SQLException e) {
-            String message = "";
+            String message;
             switch (e.getErrorCode()) {
                 case 0 -> message = "SERVER NON ESISTENTE";
                 case 1044 -> message = "DATABASE NON ESISTENTE";
@@ -52,4 +52,5 @@ public class DbAccess {
             System.err.println(e.getMessage());
         }
     }
+
 }

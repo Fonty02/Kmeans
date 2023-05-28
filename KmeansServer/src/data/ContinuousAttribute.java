@@ -1,7 +1,7 @@
 package data;
 
-//Tale classe modella un attributo continuo (numerico) e include i metodi per la  “normalizzazione” del dominio dellattributo nellintervallo [0,1]
-//al fine da rendere confrontabili attributi aventi domini diversi
+//Tale classe modella un attributo continuo (numerico) e include i metodi per la “normalizzazione” del dominio dell'attributo nell'intervallo [0,1]
+//al fine di rendere confrontabili attributi aventi domini diversi
 class ContinuousAttribute extends Attribute {
     private final double max;
     private final double min;

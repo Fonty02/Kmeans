@@ -1,6 +1,6 @@
-package Server;
+package server;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -17,7 +17,7 @@ class MultiServer {
         try {
             serverSocket = new ServerSocket(PORT);
             while (true) {
-                Socket socket = null;
+                Socket socket;
                 try {
                     socket = serverSocket.accept();
                     new ServerOneClient(socket);
@@ -28,13 +28,22 @@ class MultiServer {
                 }
             }
         } catch (IOException e) {
-                System.err.println("Porta occupata");
-                System.exit(1);
+            e.printStackTrace();
+            System.err.println("Porta occupata");
+            System.exit(1);
         }
     }
 
     public static void main(String[] args) {
-        MultiServer multiServer = new MultiServer(8080);
+        try {
+            System.setErr(new PrintStream(new BufferedOutputStream(new FileOutputStream("Logs/log.txt")), true));
+        } catch (IOException e) {
+            System.err.println("Impossibile accedere al file di log");
+            e.printStackTrace();
+            System.err.println();
+            return;
+        }
+        new MultiServer(8080);
     }
 
 }
