@@ -52,7 +52,7 @@ public class TableSchema {
 
         Connection con = db.getConnection();
         DatabaseMetaData meta = con.getMetaData();
-        ResultSet res = meta.getColumns(null, null, tableName, null);
+        ResultSet res = meta.getColumns(con.getCatalog(), null, tableName, null);
 
         while (res.next()) {
             if (mapSQL_JAVATypes.containsKey(res.getString("TYPE_NAME")))
