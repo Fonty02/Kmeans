@@ -128,8 +128,18 @@ import java.net.Socket;
 
 
     public static void main(String[] args) {
-        String ip = args[0];
-        int port = Integer.parseInt(args[1]);
+        String ip;
+        int port;
+        try {
+            ip = args[0];
+            port = Integer.parseInt(args[1]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Errore: inserire ip e porta come argomenti");
+            return;
+        } catch (NumberFormatException e) {
+            System.err.println("Errore: la porta deve essere un numero");
+            return;
+        }
         MainTest main;
         String answer;
         try {
