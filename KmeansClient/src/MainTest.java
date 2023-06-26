@@ -17,7 +17,6 @@ import java.net.Socket;
  *     <li>Chiedere al server di eseguire il clustering</li>
  *     <li>Chiedere al server di salvare il clustering su file</li>
  * </ul>
- * </p>
  */
 class MainTest {
 
@@ -34,11 +33,11 @@ class MainTest {
     /**
      * Costruttore di MainTest. Si connette al server e inizializza i canali di input e output.
      * <p>
+     * Il costruttore si connette al server e inizializza i canali di input e output.
      * @param ip   l'indirizzo ip/dns del server
      * @param port la porta sulla quale il processo server è in ascolto
      * @throws IOException se si verifica un errore di I/O
      * @see IOException
-     *</p>
      */
     private MainTest(String ip, int port) throws IOException {
         InetAddress addr = InetAddress.getByName(ip);
@@ -59,7 +58,6 @@ class MainTest {
      *  <li>Caricare una tabella da un database</li>
      *  <li>Caricare una tabella da un file</li>
      * </ul>
-     * </p>
      * @return <code>answer</code>, ovvero la risposta dell'utente
      */
     private int menu() {
@@ -94,7 +92,6 @@ class MainTest {
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
      * @throws ClassNotFoundException se si verifica un errore di classe
-     * </p>
      */
     private String learningFromFile() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(3);
@@ -133,7 +130,6 @@ class MainTest {
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
      * @throws ClassNotFoundException se si verifica un errore di classe
-     * </p>
      */
     private void storeTableFromDb() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(0);
@@ -193,7 +189,6 @@ class MainTest {
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
      * @throws ClassNotFoundException se si verifica un errore di classe
-     * </p>
      */
     private String learningFromDbTable() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(1);
@@ -218,7 +213,6 @@ class MainTest {
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
      * @throws ClassNotFoundException se si verifica un errore di classe
-     *</p>
      */
     private void storeClusterInFile() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(2);
@@ -243,7 +237,6 @@ class MainTest {
      * Il metodo termina quando l'utente sceglie di uscire dal programma o quando si verifica un errore che non può essere gestito.
      *
      * @param args indirizzo ip/dns e porta del server a cui connettersi
-     * </p>
      */
     public static void main(String[] args) {
         String ip;
