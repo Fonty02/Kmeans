@@ -1,28 +1,67 @@
 import keyboardinput.Keyboard;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
+/**
+ * MainTest è la classe che funge da client per il server di clustering.
+ * <p>
+ * Il client si connette al server e gli invia delle richieste.
+ * In particolare il client può:
+ * <ul>
+ *     <li>Caricare una tabella da un database</li>
+ *     <li>Caricare una tabella da un file</li>
+ *     <li>Chiedere al server di eseguire il clustering</li>
+ *     <li>Chiedere al server di salvare il clustering su file</li>
+ * </ul>
+ * </p>
+ */
+class MainTest {
 
- class MainTest {
-
+    /**
+     * out è il canale di output verso il server. Viene usato per inviare messaggi al server.
+     */
     private final ObjectOutputStream out;
-    private final ObjectInputStream in; // stream con richieste del client
+    /**
+     * in è il canale di input dal server. Viene usato per ricevere messaggi dal server.
+     */
+    private final ObjectInputStream in;
 
 
-    private  MainTest(String ip, int port) throws IOException {
-        InetAddress addr = InetAddress.getByName(ip); //ip
+    /**
+     * Costruttore di MainTest. Si connette al server e inizializza i canali di input e output.
+     * <p>
+     * @param ip   l'indirizzo ip/dns del server
+     * @param port la porta sulla quale il processo server è in ascolto
+     * @throws IOException se si verifica un errore di I/O
+     * @see IOException
+     *</p>
+     */
+    private MainTest(String ip, int port) throws IOException {
+        InetAddress addr = InetAddress.getByName(ip);
         System.out.println("addr = " + addr);
-        Socket socket = new Socket(addr, port); //Port
+        Socket socket = new Socket(addr, port);
         System.out.println(socket);
-
         out = new ObjectOutputStream(socket.getOutputStream());
         in = new ObjectInputStream(socket.getInputStream());
-        // stream con richieste del client
     }
 
+    /**
+     * Il metodo menu permette di scegliere una opzione tra quelle disponibili.
+     * <p>
+     * Il metodo stampa a video le opzioni disponibili e chiede all'utente di inserire un numero.
+     * Il metodo controlla che il numero inserito sia valido e in caso contrario richiede all'utente di inserire un nuovo numero.
+     * Le opzioni sono:
+     * <ul>
+     *  <li>Caricare una tabella da un database</li>
+     *  <li>Caricare una tabella da un file</li>
+     * </ul>
+     * </p>
+     * @return <code>answer</code>, ovvero la risposta dell'utente
+     */
     private int menu() {
         int answer;
         System.out.println("Scegli una opzione");
@@ -37,6 +76,26 @@ import java.net.Socket;
 
     }
 
+    /**
+     * Il metodo learningFromFile permette di caricare un clustering da un file.
+     * <p>
+     * Il metodo chiede all'utente di inserire il nome del file da cui caricare il clustering.
+     * Il nome del file è costituito da:
+     * <ul>
+     *     <li>Nome del database</li>
+     *     <li>Nome della tabella</li>
+     *     <li>Numero di cluster</li>
+     * </ul>
+     * Il metodo invia al server il nome del file e riceve dal server un messaggio di conferma.
+     * Se il messaggio di conferma è "OK" il metodo riceve dal server il clustering e lo stampa a video,
+     * altrimenti lancia un'eccezione di tipo ServerException.
+     *
+     * @return <code>result</code>, ovvero il clustering caricato dal file
+     * @throws ServerException        se il server invia un messaggio di errore
+     * @throws IOException            se si verifica un errore di I/O
+     * @throws ClassNotFoundException se si verifica un errore di classe
+     * </p>
+     */
     private String learningFromFile() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(3);
         System.out.print("Nome database:");
@@ -55,30 +114,49 @@ import java.net.Socket;
 
     }
 
+    /**
+     * Il metodo storeTableFromDb permette di inviare al server la richiesta per la connessione.
+     * <p>
+     * Il metodo chiede all'utente di inserire i dati necessari per connettersi al database. L'utente può utilizzare
+     * dei valori di default oppure scegliere di inserire i dati manualmente.
+     * I dati sono:
+     * <ul>
+     *     <li>Indirizzo IPv4/DNS del Database</li>
+     *     <li>Porta del Database</li>
+     *     <li>Nome del Database</li>
+     *     <li>Nome della Tabella</li>
+     *     <li>Nome utente con il quale accedere al database</li>
+     *     <li>Password per accedere al database</li>
+     * </ul>
+     * Il metodo invia al server i dati inseriti e riceve dal server un messaggio di conferma.
+     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
+     * @throws ServerException        se il server invia un messaggio di errore
+     * @throws IOException            se si verifica un errore di I/O
+     * @throws ClassNotFoundException se si verifica un errore di classe
+     * </p>
+     */
     private void storeTableFromDb() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(0);
-        boolean def=false;
+        boolean def = false;
         do {
             System.out.print("Vuoi usere dei valori di default per il database? (y/n)");
             String answer = Keyboard.readString();
             if (answer.equals("y")) {
-                def=true;
+                def = true;
                 break;
             } else if (answer.equals("n")) {
                 break;
             }
         }
         while (true);
-        if (def)
-        {
+        if (def) {
             out.writeObject("localhost");
             out.writeObject(3306);
             out.writeObject("MapDB");
             out.writeObject("playtennis");
             out.writeObject("MapUser");
             out.writeObject("map");
-        }
-        else {
+        } else {
             System.out.print("Inserisci l'indirizzo ip/DNS del database (localhost / 127.0.0.1 se il database si trova nel server a cui si è connessi):");
             String ip = Keyboard.readString();
             out.writeObject(ip);
@@ -101,9 +179,22 @@ import java.net.Socket;
         String result = (String) in.readObject();
         if (!result.equals("OK"))
             throw new ServerException(result);
-
     }
 
+    /**
+     * Il metodo learningFromDbTable permette di richiedere al server di creare un clustering.
+     * <p>
+     * Il cluster viene creato sulla tabella scelta in <code>storeTableFromDb</code>.
+     * Il metodo chiede all'utente di inserire il numero di cluster da creare e il server risponde con un messaggio di conferma.
+     * Se il messaggio di conferma  è "OK" allora viene stampato a video il numero di cluster creati e viene restituito il clustering.
+     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
+     *
+     * @return <code>result</code>, ovvero il clustering caricato dal database
+     * @throws ServerException        se il server invia un messaggio di errore
+     * @throws IOException            se si verifica un errore di I/O
+     * @throws ClassNotFoundException se si verifica un errore di classe
+     * </p>
+     */
     private String learningFromDbTable() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(1);
         System.out.print("Numero di cluster:");
@@ -118,6 +209,17 @@ import java.net.Socket;
 
     }
 
+    /**
+     * Il metodo storeClusterInFile permette di richiedere al server di salvare il clustering su file.
+     * <p>
+     * Il metodo chiede al server di salvare il clustering appena creato su file e il server risponde con un messaggio di conferma.
+     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
+     *
+     * @throws ServerException        se il server invia un messaggio di errore
+     * @throws IOException            se si verifica un errore di I/O
+     * @throws ClassNotFoundException se si verifica un errore di classe
+     *</p>
+     */
     private void storeClusterInFile() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(2);
         String result = (String) in.readObject();
@@ -126,7 +228,23 @@ import java.net.Socket;
 
     }
 
-
+    /**
+     * Il metodo main permette di avviare il client.
+     * <p>
+     * Il metodo prende in input da linea di comando l'indirizzo ip e la porta del server a cui connettersi.
+     * Viene creato un oggetto di tipo MainTest e viene gestita l'interazione con l'utente tramite il metodo menu
+     * e la comunicazione con il server tramite i metodi:
+     *  <ul>
+     *      <li><code>storeTableFromDb</code></li>
+     *      <li><code>learningFromDbTable</code></li>
+     *      <li><code>storeClusterInFile</code></li>
+     *      <li><code>learningFromFile</code></li>
+     * </ul>
+     * Il metodo termina quando l'utente sceglie di uscire dal programma o quando si verifica un errore che non può essere gestito.
+     *
+     * @param args indirizzo ip/dns e porta del server a cui connettersi
+     * </p>
+     */
     public static void main(String[] args) {
         String ip;
         int port;
@@ -162,12 +280,12 @@ import java.net.Socket;
                         System.out.println(e.getMessage());
                     }
                 }
-                case 2 -> { // learning from db
+                case 2 -> {
 
                     while (true) {
                         try {
                             main.storeTableFromDb();
-                            break; //esce fuori dal while
+                            break;
                         } catch (IOException | ClassNotFoundException e) {
                             System.out.println(e.getMessage());
                             return;
@@ -179,7 +297,7 @@ import java.net.Socket;
                                 System.exit(0);
                             }
                         }
-                    } //end while [viene fuori dal while con un db (in alternativa il programma termina)
+                    }
                     do {
                         try {
                             String clusterSet = main.learningFromDbTable();
@@ -200,7 +318,7 @@ import java.net.Socket;
                         while (!answer.equals("y") && !answer.equals("n"));
                     }
                     while (answer.equals("y"));
-                } //fine case 2
+                }
                 default -> System.out.println("Opzione non valida!");
             }
             do {
