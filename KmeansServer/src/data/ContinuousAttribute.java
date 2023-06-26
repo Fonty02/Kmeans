@@ -30,6 +30,7 @@ class ContinuousAttribute extends Attribute {
 
     /**
      * Metodo che restituiscee il valore scalato dell'attributo.
+     * @param v Valore dell'attributo.
      * @return Valore scalato dell'attributo.
      */
     double getScaledValue(double v) {

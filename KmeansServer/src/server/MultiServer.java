@@ -63,7 +63,6 @@ class MultiServer {
 
     /**
      * Main del server multithread
-     * 
      * Viene settato il file di log e viene creato un oggetto MultiServer.
      * In caso di errore nell'accesso al file di log, viene stampato un messaggio di errore e il programma termina.
      * @param args argomenti passati da linea di comando

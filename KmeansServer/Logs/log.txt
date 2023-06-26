@@ -1,9 +1,3 @@
-data.OutOfRangeSampleSize: Numero di cluster non valido, deve essere compreso tra 1 e 14
-	at data.Data.sampling(Data.java:147)
-	at mining.ClusterSet.initializeCentroids(ClusterSet.java:46)
-	at mining.KMeansMiner.kmeans(KMeansMiner.java:28)
-	at server.ServerOneClient.run(ServerOneClient.java:151)
-
 Errore nella comunicazione
 java.net.SocketException: Connection reset
 	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:313)
