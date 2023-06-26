@@ -4,14 +4,41 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * MultiServer è la classe che implementa il server multithread.
+ * <p>
+ * Il server multithread è un server che può gestire più client contemporaneamente.
+ * Viene creato l'oggetto ServerSocket che si mette in ascolto su una specifica porta.
+ * Quando viene stabilita una connessione con un client, viene creato un oggetto ServerOneClient che gestisce la comunicazione con quel client.
+ * @see ServerOneClient
+ */
 class MultiServer {
-    private int PORT = 8080; //porta di default
+    /**
+     * Porta su cui il server è in ascolto
+     */
+    private final int PORT;
+
+    /**
+     * Costruttore del server multithread
+     * <p>
+     * Viene inizializzato il valore della porta e viene chiamato il metodo run().
+     * @param port porta su cui il server è in ascolto
+     */
 
     private MultiServer(int port) {
         PORT = port;
         run();
     }
 
+    /**
+     * run è il metodo che crea il ServerSocket e si mette in ascolto su una specifica porta.
+     * <p>
+     * Quando viene stabilita una connessione con un client, viene creato un oggetto ServerOneClient che gestisce la comunicazione con quel client.
+     * In caso di errore nella creazione del ServerSocket, viene stampato un messaggio di errore e il programma termina.
+     * In caso di errore nell'accept del ServerSocket, viene stampato un messaggio di errore, liberata la porta e il programma termina.
+     * @see ServerOneClient
+     * @see IOException
+     */
     private void run() {
         ServerSocket serverSocket;
         try {
@@ -34,6 +61,13 @@ class MultiServer {
         }
     }
 
+    /**
+     * Main del server multithread
+     * <p>
+     * Viene settato il file di log e viene creato un oggetto MultiServer.
+     * In caso di errore nell'accesso al file di log, viene stampato un messaggio di errore e il programma termina.
+     * @param args argomenti passati da linea di comando
+     */
     public static void main(String[] args) {
         try {
             System.setErr(new PrintStream(new BufferedOutputStream(new FileOutputStream("Logs/log.txt")), true));
