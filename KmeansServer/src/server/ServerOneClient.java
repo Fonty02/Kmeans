@@ -13,12 +13,46 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.sql.SQLException;
 
+/**
+ * ServerOneClient è la classe che gestisce la comunicazione con un client.
+ * <p>
+ * La classe estende {@link Thread} e effettua overriding del metodo {@link Thread#run()}.
+ * La classe riceve una richiesta dal client e la esegue, inviando il risultato al client.
+ * Le richieste che il server può ricevere sono:
+ * <ul>
+ *     <li>0: Connessione a un database</li>
+ *     <li>1: Esegui K-Means</li>
+ *     <li>2: Salva K-Means su un file</li>
+ *     <li>3: Carica K-Means da un file</li>
+ * </ul>
+ * @see Thread
+ */
 class ServerOneClient extends Thread {
+    /**
+     * Socket per la comunicazione con il client.
+     */
     private final Socket socket;
+    /**
+     * Stream di output per mandare messaggi al client.
+     */
     private final ObjectOutputStream out;
+    /**
+     * Stream di input per ricevere messaggi dal client.
+     */
     private final ObjectInputStream in;
+    /**
+     * Oggetto di tipo {@link KMeansMiner} per effettuare il K-Means.
+     */
     private KMeansMiner kmeans;
 
+    /**
+     * Costruttore della classe.
+     * <p>
+     * Il costruttore inizializza gli attributi della classe e avvia il thread.
+     *
+     * @param socket Socket per la comunicazione con il client.
+     * @throws IOException In caso di errore nella comunicazione.
+     */
     ServerOneClient(Socket socket) throws IOException {
         this.socket = socket;
         out = new ObjectOutputStream(socket.getOutputStream());
@@ -26,6 +60,12 @@ class ServerOneClient extends Thread {
         start();
     }
 
+    /**
+     * Chiude la comunicazione con il client.
+     * <p>
+     * Il metodo chiude la comunicazione con il client e stampa un messaggio di avviso.
+     * In caso di errore, stampa un messaggio di errore.
+     */
     private void closeConnection() {
         try {
             String user = socket.getInetAddress().toString();
@@ -38,6 +78,15 @@ class ServerOneClient extends Thread {
         }
     }
 
+    /**
+     * Il metodo run esegue il thread.
+     * <p>
+     * Il metodo esegue il thread, ricevendo una richiesta dal client con relativi parametri e inviando un messaggio di conferma.
+     * Se la conferma è OK, esegue la richiesta e invia il risultato al client.
+     * Se la conferma è negativa viene mandato al client il messaggio relativo al problema verificatosi.
+     * In caso di errore nella comunicazione, stampa un messaggio di errore e chiude la comunicazione.
+     * Se il client chiude la comunicazione, stampa un messaggio di avviso e chiude la comunicazione.
+     */
     public void run() {
         String tablename = null, server = null, db = null, user = null, pass = null;
         Data data = null;
