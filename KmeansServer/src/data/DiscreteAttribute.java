@@ -31,9 +31,9 @@ class DiscreteAttribute extends Attribute implements Iterable<String> {
     }
 
     /**
-     * Restituisce il numero di valori del dominio dell'attributo.
+     * Restituisce l'iteratore per iterare sui valori del dominio dell'attributo.
      *
-     * @return numero di valori del dominio dell'attributo
+     * @return iteratore per iterare sui valori del dominio dell'attributo
      */
     public Iterator<String> iterator() {
         return this.values.iterator();
