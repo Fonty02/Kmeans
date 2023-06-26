@@ -16,7 +16,7 @@ public class TableSchema {
     /**
      * Riferimento al database.
      */
-    DbAccess db;
+    private DbAccess db;
 
     /**
      * La classe Column rappresenta una colonna della tabella.
