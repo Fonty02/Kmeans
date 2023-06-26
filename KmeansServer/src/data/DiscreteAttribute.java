@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 /**
  * Classe che rappresenta un attributo discreto (stringa).
- * <p>
+ * 
  * Estende la classe astratta {@link Attribute} e implementa l'interfaccia {@link Iterable} per poter iterare sui valori del dominio dell'attributo.
  */
 class DiscreteAttribute extends Attribute implements Iterable<String> {

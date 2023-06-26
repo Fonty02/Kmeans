@@ -5,12 +5,45 @@ import database.*;
 import java.sql.SQLException;
 import java.util.*;
 
+/**
+ * Classe che rappresenta un dataset.
+ * 
+ * Contiene un insieme di oggetti {@link Example} rappresentanti le transazioni e un insieme di oggetti {@link Attribute} rappresentanti gli attributi.
+ */
 public class Data {
+
+    /**
+     * Insieme di oggetti {@link Example} rappresentanti le transazioni.
+     */
     private final List<Example> data;
+
+    /**
+     * Numero di transazioni.
+     */
     private final int numberOfExamples;
-    private final List<Attribute> attributeSet = new LinkedList<>(); //nomi degli attributi del dataset con il rispettivo indice
+
+    /**
+     * Insieme di oggetti {@link Attribute} rappresentanti gli attributi.
+     */
+    private final List<Attribute> attributeSet = new LinkedList<>();
 
 
+    /**
+     * Costruttore della classe.
+     * 
+     * Legge i dati dal database e li memorizza.
+     *
+     * @param server   nome del server
+     * @param port     numero della porta
+     * @param database nome del database
+     * @param user_id  nome utente
+     * @param password password
+     * @param table    nome della tabella
+     * @throws SQLException              eccezione lanciata in caso di errori nella comunicazione con il database
+     * @throws EmptySetException         eccezione lanciata in caso di insieme vuoto
+     * @throws DatabaseConnectionException eccezione lanciata in caso di errore di connessione al database
+     * @throws NoValueException          eccezione lanciata in caso di valore non presente
+     */
     public Data(String server, int port, String database, String user_id, String password, String table) throws SQLException, EmptySetException, DatabaseConnectionException, NoValueException {
         DbAccess dbAccess = new DbAccess(server, port, database, user_id, password);
         dbAccess.initConnection();
@@ -38,20 +71,37 @@ public class Data {
         dbAccess.closeConnection();
     }
 
+    /**
+     * Restituisce il numero di transazioni.
+     * @return numero di transizioni.
+     */
     public int getNumberOfExamples() {
         return this.numberOfExamples;
     }
 
+    /**
+     * Restituisce il numero di attributi.
+     * @return numero di attributi.
+     */
     public int getNumberOfAttributes() {
         return this.attributeSet.size();
     }
-
-
+    
+    /**
+     * Restituisce l'oggetto specificato dagli indici di riga e colonna.
+     * @param exampleIndex indice di riga
+     * @param attributeIndex indice di colonna
+     * @return oggetto specificato dagli indici di riga e colonna
+     */
     public Object getAttributeValue(int exampleIndex, int attributeIndex) {
         return this.data.get(exampleIndex).get(attributeIndex);
     }
 
 
+    /**
+     * Restituiscee la stringa rappreseentante il dataset.
+     * @return stringa rappresentante il dataset
+     */
     public String toString() {
         String s = "";
         int i = 0;
@@ -67,8 +117,14 @@ public class Data {
 
         return s;
     }
+    
 
-    //restituisce la tupla sull'indice di riga index
+    /**
+     * Restituisce la tupla sull'indice di riga index.
+     * @param index indice di riga
+     * @return tupla sull'indice di riga index
+     * @see Tuple
+     */
     public Tuple getItemSet(int index) {
         Tuple tuple = new Tuple(attributeSet.size());
         for (Attribute at : attributeSet) {
@@ -80,13 +136,16 @@ public class Data {
         return tuple;
     }
 
-
-    //restituisce un array di k interi generati casualmente e che non si ripetono
+    /**
+     * Restituisce un array di k interi generati casualmente e che non si ripetono.
+     * @param k numero di interi da generare
+     * @return array di k interi generati casualmente e che non si ripetono
+     * @throws OutOfRangeSampleSize eccezione lanciata in caso di numero di cluster non valido
+     */
     public int[] sampling(int k) throws OutOfRangeSampleSize {
         if (k <= 0 || k > data.size())
             throw new OutOfRangeSampleSize("Numero di cluster non valido, deve essere compreso tra 1 e " + data.size());
         int[] centroidIndexes = new int[k];
-        //choose k random different centroids in data.
         Random rand = new Random();
         rand.setSeed(System.currentTimeMillis());
         for (int i = 0; i < k; i++) {
@@ -95,7 +154,6 @@ public class Data {
             do {
                 found = false;
                 c = rand.nextInt(getNumberOfExamples());
-                // verify that centroid[c] is not equal to a centroide already stored in CentroidIndexes
                 for (int j = 0; j < i; j++)
                     if (compare(centroidIndexes[j], c)) {
                         found = true;
@@ -108,6 +166,12 @@ public class Data {
         return centroidIndexes;
     }
 
+    /**
+     * Restituisce true se le righe i e j sono uguali, false altrimenti.
+     * @param i indice di riga
+     * @param j indice di riga
+     * @return true se le righe i e j sono uguali, false altrimenti
+     */
     private boolean compare(int i, int j) {
         for (Attribute at : attributeSet) {
             if (!data.get(i).get(at.getIndex()).equals(data.get(j).get(at.getIndex())))
@@ -116,13 +180,24 @@ public class Data {
         return true;
     }
 
+    /**
+     * Restituisce il valore del centroide per l'attributo attribute.
+     * @param idList lista degli indici di riga
+     * @param attribute attributo
+     * @return valore del centroide per l'attributo attribute
+     */
     Object computePrototype(Set<Integer> idList, Attribute attribute) {
         if (attribute instanceof DiscreteAttribute) return computePrototype(idList, (DiscreteAttribute) attribute);
         else return computePrototype(idList, (ContinuousAttribute) attribute);
 
     }
 
-    //calcolo del centroide (moda -> valore che occorre piu volte per attribute)
+    /**
+     * Retituisce il centroide rispetto ad un attributo discreto.
+     * @param idList lista degli indici di riga
+     * @param attribute attributo discreto
+     * @return centroide rispetto ad attribute
+     */
     private String computePrototype(Set<Integer> idList, DiscreteAttribute attribute) {
         Iterator<String> it = attribute.iterator();
         String first = it.next();
@@ -141,6 +216,12 @@ public class Data {
         return prototype;
     }
 
+    /**
+     * Retituisce il centroide rispetto ad un attributo conintuo.
+     * @param idList lista degli indici di riga
+     * @param attribute attributo continuo
+     * @return centroide rispetto ad attribute
+     */
     private Double computePrototype(Set<Integer> idList, ContinuousAttribute attribute) {
         double sum = 0;
         for (int i : idList)

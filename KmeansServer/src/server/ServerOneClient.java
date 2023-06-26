@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 /**
  * ServerOneClient è la classe che gestisce la comunicazione con un client.
- * <p>
+ * 
  * La classe estende {@link Thread} e effettua overriding del metodo {@link Thread#run()}.
  * La classe riceve una richiesta dal client e la esegue, inviando il risultato al client.
  * Le richieste che il server può ricevere sono:
@@ -47,7 +47,7 @@ class ServerOneClient extends Thread {
 
     /**
      * Costruttore della classe.
-     * <p>
+     * 
      * Il costruttore inizializza gli attributi della classe e avvia il thread.
      *
      * @param socket Socket per la comunicazione con il client.
@@ -62,7 +62,7 @@ class ServerOneClient extends Thread {
 
     /**
      * Chiude la comunicazione con il client.
-     * <p>
+     * 
      * Il metodo chiude la comunicazione con il client e stampa un messaggio di avviso.
      * In caso di errore, stampa un messaggio di errore.
      */
@@ -80,7 +80,7 @@ class ServerOneClient extends Thread {
 
     /**
      * Il metodo run esegue il thread.
-     * <p>
+     * 
      * Il metodo esegue il thread, ricevendo una richiesta dal client con relativi parametri e inviando un messaggio di conferma.
      * Se la conferma è OK, esegue la richiesta e invia il risultato al client.
      * Se la conferma è negativa viene mandato al client il messaggio relativo al problema verificatosi.
