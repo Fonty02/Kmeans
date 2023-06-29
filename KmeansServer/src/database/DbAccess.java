@@ -1,5 +1,6 @@
 package database;
 
+import java.net.Socket;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -67,6 +68,13 @@ public class DbAccess {
      */
     public void initConnection() throws DatabaseConnectionException {
         try {
+            try {
+                (new Socket(SERVER, PORT)).close();
+            }
+            catch(Exception e) {
+              String message = "SERVER NON ESISTENTE";
+              throw new DatabaseConnectionException(message);
+            }
             Class.forName(DRIVER_CLASS_NAME);
             conn = DriverManager.getConnection(DBMS + "://" + SERVER + ":" + PORT + "/" + DATABASE
                     + "?user=" + USER_ID + "&password=" + PASSWORD);
