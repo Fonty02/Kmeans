@@ -31,13 +31,12 @@ class MainTest {
 
 
     /**
-     * Costruttore di MainTest. Si connette al server e inizializza i canali di input e output.
+     * Costruttore di MainTest.
      * <p>
      * Il costruttore si connette al server e inizializza i canali di input e output.
      * @param ip   l'indirizzo ip/dns del server
      * @param port la porta sulla quale il processo server è in ascolto
      * @throws IOException se si verifica un errore di I/O
-     * @see IOException
      */
     private MainTest(String ip, int port) throws IOException {
         InetAddress addr = InetAddress.getByName(ip);
@@ -71,7 +70,6 @@ class MainTest {
         }
         while (answer <= 0 || answer > 2);
         return answer;
-
     }
 
     /**
@@ -108,17 +106,16 @@ class MainTest {
         if (result.equals("OK"))
             return (String) in.readObject();
         else throw new ServerException(result);
-
-    }
+}
 
     /**
-     * Il metodo storeTableFromDb permette di inviare al server la richiesta per la connessione.
+     * Il metodo storeTableFromDb permette di inviare al server la richiesta per la connessione al database.
      * <p>
      * Il metodo chiede all'utente di inserire i dati necessari per connettersi al database. L'utente può utilizzare
      * dei valori di default oppure scegliere di inserire i dati manualmente.
      * I dati sono:
      * <ul>
-     *     <li>Indirizzo IPv4/DNS del Database</li>
+     *     <li>Indirizzo IPv4/DNS del database</li>
      *     <li>Porta del Database</li>
      *     <li>Nome del Database</li>
      *     <li>Nome della Tabella</li>
@@ -182,7 +179,7 @@ class MainTest {
      * <p>
      * Il cluster viene creato sulla tabella scelta in <code>storeTableFromDb</code>.
      * Il metodo chiede all'utente di inserire il numero di cluster da creare e il server risponde con un messaggio di conferma.
-     * Se il messaggio di conferma  è "OK" allora viene stampato a video il numero di cluster creati e viene restituito il clustering.
+     * Se il messaggio di conferma è "OK" allora viene stampato a video il numero di cluster creati e viene restituito il clustering.
      * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
      *
      * @return <code>result</code>, ovvero il clustering caricato dal database
@@ -200,8 +197,6 @@ class MainTest {
             System.out.println("Clustering output:" + in.readObject());
             return (String) in.readObject();
         } else throw new ServerException(result);
-
-
     }
 
     /**
@@ -219,7 +214,6 @@ class MainTest {
         String result = (String) in.readObject();
         if (!result.equals("OK"))
             throw new ServerException(result);
-
     }
 
     /**
@@ -237,6 +231,10 @@ class MainTest {
      * Il metodo termina quando l'utente sceglie di uscire dal programma o quando si verifica un errore che non può essere gestito.
      *
      * @param args indirizzo ip/dns e porta del server a cui connettersi
+     * @see #storeTableFromDb()
+     * @see #learningFromDbTable()
+     * @see #storeClusterInFile()
+     * @see #learningFromFile()
      */
     public static void main(String[] args) {
         String ip;
@@ -295,9 +293,7 @@ class MainTest {
                         try {
                             String clusterSet = main.learningFromDbTable();
                             System.out.println(clusterSet);
-
                             main.storeClusterInFile();
-
                         } catch (ClassNotFoundException | IOException e) {
                             System.out.println(e.getMessage());
                             return;
