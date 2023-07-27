@@ -60,9 +60,9 @@ class Cluster implements Serializable {
     }
 
     /**
-     * Verifica se una transazione è clusterizzata nell'array corrente.
+     * Verifica se una transazione è presente nel cluster.
      * @param id l'indice della transazione da verificare
-     * @return <code>true</code> se la transazione è clusterizzata, <code>false</code> altrimenti
+     * @return <code>true</code> se la transazione è presente, <code>false</code> altrimenti
      */
     boolean contain(int id) {
         return clusteredData.contains(id);
