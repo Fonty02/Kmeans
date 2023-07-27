@@ -6,8 +6,7 @@ import data.OutOfRangeSampleSize;
 import java.io.*;
 
 /**
- * La classe KMeansMiner modella un algoritmo di clustering basato su partizionamento.
- * L'algoritmo di clustering è il K-Means.
+ * La classe KMeansMiner modella l'algoritmo K-means.
  */
 public class KMeansMiner {
 
@@ -17,9 +16,9 @@ public class KMeansMiner {
     private ClusterSet C;
 
     /**
-     * Inializza il clusterSet su cui esegui il KMeans.
-     * @param k il numero di cluster da creare nel clusterSet <code>C</code>
-     * @throws OutOfRangeSampleSize se il numero di cluster è minore di 1
+     * Inizializza il clusterSet su cui eseguire il K-means.
+     * @param k il numero di cluster da creare nel clusterSet
+     * @throws OutOfRangeSampleSize se il numero di cluster specificato è minore di 1
      */
 
     public KMeansMiner(int k) throws OutOfRangeSampleSize {
@@ -27,7 +26,7 @@ public class KMeansMiner {
     }
 
     /**
-     * Carica il clusterSet su cui è stato eseguito il KMeans da un file.
+     * Carica il clusterSet su cui è stato eseguito il K-means da un file.
      * @param fileName il nome del file da cui caricare il clusterSet
      * @throws IOException se si verifica un errore di I/O
      * @throws ClassNotFoundException se si verifica un errore di caricamento della classe
@@ -39,15 +38,15 @@ public class KMeansMiner {
     }
 
     /**
-     * Restituisce il clusterSet su cui è stato eseguito il KMeans.
-     * @return il clusterSet su cui è stato eseguito il KMeans
+     * Restituisce il clusterSet su cui è stato eseguito il K-means.
+     * @return il clusterSet su cui è stato eseguito il K-means
      */
     public ClusterSet getC() {
         return C;
     }
 
     /**
-     * Esegue l'algoritmo di clustering KMeans.
+     * Esegue l'algoritmo di clustering K-means.
      * @param data il dataset
      * @return il numero di iterazioni eseguite
      * @throws OutOfRangeSampleSize se il numero di tuple del dataset è minore del numero di cluster
@@ -80,11 +79,10 @@ public class KMeansMiner {
     }
 
     /**
-     * Salva il clusterSet su cui è stato eseguito il KMeans su un file.
+     * Salva il clusterSet su cui è stato eseguito il K-means su un file.
      * @param fileName il nome del file su cui salvare il clusterSet
      * @throws IOException se si verifica un errore di I/O
      */
-
     public void salva(String fileName) throws IOException {
         ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(fileName)));
         out.writeObject(C);
