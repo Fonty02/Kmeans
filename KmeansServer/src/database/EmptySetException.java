@@ -2,7 +2,7 @@ package database;
 
 /**
  * EmptySetException è la classe che gestisce le eccezioni lanciate in caso di risultati vuoti da una query.
- * Questa eccezione viene lanciata quando il risultato di una qeury è vuoto.
+ * Questa eccezione viene lanciata quando il risultato di una query è vuoto.
  * Viene considerato un errore in quanto non è possibile eseguire operazioni su un risultato vuoto.
  * @see Exception
  */
