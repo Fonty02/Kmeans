@@ -1,8 +1,7 @@
 package data;
 
-
 /**
- * Tale classe modella un attributo continuo (numerico) e include i metodi per la “normalizzazione” del dominio dell'attributo nell'intervallo [0,1]
+ * Tale classe modella un attributo continuo (numerico) e include i metodi per la “normalizzazione” del dominio dell'attributo nell'intervallo [0, 1]
  * al fine di rendere confrontabili attributi aventi domini diversi
  */
 class ContinuousAttribute extends Attribute {
@@ -29,7 +28,7 @@ class ContinuousAttribute extends Attribute {
     }
 
     /**
-     * Metodo che restituiscee il valore scalato dell'attributo.
+     * Metodo che restituisce il valore scalato dell'attributo nell'intervallo [0, 1]
      * @param v Valore dell'attributo.
      * @return Valore scalato dell'attributo.
      */
