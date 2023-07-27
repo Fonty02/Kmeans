@@ -41,7 +41,7 @@ public class Tuple implements Serializable {
     }
 
     /**
-     * Aggiunge l'item c all'array tuple nella posizione i.
+     * Aggiunge l'item nella posizione specificata
      * @param c item da aggiungere
      * @param i indice dell'array tuple in cui aggiungere l'item c
      */
@@ -51,7 +51,7 @@ public class Tuple implements Serializable {
 
     /**
      * Determina la distanza tra la tupla riferita da obj e la
-     * tupla corrente.. La distanza è ottenuta come la somma delle
+     * tupla corrente. La distanza è ottenuta come la somma delle
      * distanze tra gli item in posizioni eguali nelle due tuple.
      * @param obj tupla da confrontare con la tupla corrente
      * @return distanza tra la tupla corrente e la tupla riferita da obj
