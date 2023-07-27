@@ -10,7 +10,6 @@ import java.io.InputStreamReader;
  *     <li>Stringhe</li>
  *     <li>Interi</li>
  * </ul>
- * In caso di errore nella lettura dell'input viene restituito il valore di default e viene stampato un messaggio di errore.
  */
 public class Keyboard {
 
@@ -22,15 +21,13 @@ public class Keyboard {
 
 	/**
      * in è l'oggetto che permette di leggere l'input da tastiera.
-     *
-     * @see BufferedReader
      */
     private static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
     /**
      * readString è il metodo che permette di leggere una stringa da tastiera.
      * <p>
-     * In caso di errore nella lettura dell'input viene restituito il valore di default e viene stampato un messaggio di errore.
+     * In caso di errore nella lettura dell'input viene restituito <code>null</code> e viene stampato un messaggio di errore.
      *
      * @return la <code>stringa</code> letta da tastiera.
      */
@@ -50,7 +47,7 @@ public class Keyboard {
      * <p>
      * Nel caso in cui la conversione a intero non avviene con successo viene stampato un messaggio di errore e
      * viene chiesto di reinserire il valore.
-     * Nel caso in cui la lettura dell'input da tastiera non avviene con successo viene restituito il valore di default e viene stampato un messaggio di errore.
+     * Nel caso in cui la lettura dell'input da tastiera non avviene con successo viene restituito -1 e viene stampato un messaggio di errore.
      *
      * @return l'<code>intero</code> letto da tastiera.
      */
