@@ -27,7 +27,7 @@ public class Example implements Comparable<Example> {
     }
 
     /**
-     * Restituisce l'ogetto in posizione i.
+     * Restituisce l'oggetto nella posizione specificata.
      * @param i Posizione dell'oggetto da restituire.
      * @return Oggetto in posizione i.
      */
