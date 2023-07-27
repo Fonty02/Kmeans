@@ -42,7 +42,7 @@ public class DbAccess {
      */
     private final int PORT;
     /**
-     * conn è l'oggetto {@link  Connection} che gestisce la connessione al database.
+     * conn è l'oggetto {@link Connection} che gestisce la connessione al database.
      */
     private Connection conn;
 
@@ -70,8 +70,7 @@ public class DbAccess {
         try {
             try {
                 (new Socket(SERVER, PORT)).close();
-            }
-            catch(Exception e) {
+            } catch(Exception e) {
               String message = "SERVER NON ESISTENTE";
               throw new DatabaseConnectionException(message);
             }
@@ -93,7 +92,7 @@ public class DbAccess {
     }
 
     /**
-     * getConnection è il metodo che restituisce l'oggetto {@link  Connection} che gestisce la connessione al database.
+     * getConnection è il metodo che restituisce l'oggetto {@link Connection} che gestisce la connessione al database.
      * @return <code>conn</code>
      */
     Connection getConnection() {
