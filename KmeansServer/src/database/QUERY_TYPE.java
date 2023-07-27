@@ -1,7 +1,7 @@
 package database;
 
 /**
- * QUERY_TYPE è l'enumerazione che definisce i tipi di query che possono essere effettuate.
+ * QUERY_TYPE è l'enumeratore che definisce i tipi di query che possono essere effettuate.
  */
 public enum QUERY_TYPE {
     /**
