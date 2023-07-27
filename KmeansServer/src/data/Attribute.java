@@ -28,7 +28,7 @@ abstract class Attribute implements Serializable {
     }
 
     /**
-     * Metodo astratto che restituisce il nome dell'attributo.
+     * Metodo che restituisce il nome dell'attributo.
      * @return Nome dell'attributo.
      */
     String getName() {
@@ -36,7 +36,7 @@ abstract class Attribute implements Serializable {
     }
 
     /**
-     * Metodo astratto che restituisce l'identificativo numerico dell'attributo all'interno del dataset.
+     * Metodo che restituisce l'identificativo numerico dell'attributo all'interno del dataset.
      * @return Identificativo numerico dell'attributo all'interno del dataset.
      */
     int getIndex() {
@@ -44,7 +44,7 @@ abstract class Attribute implements Serializable {
     }
 
     /**
-     * Metodo astratto che restituisce la stringa rappresentante l'attributo.
+     * Metodo che restituisce la stringa rappresentante l'attributo.
      * @return Nome dell'attributo.
      */
     public String toString() {
