@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 
 /**
- * La classe ClusterSet modella l'insieme di cluster di un algoritmo di clustering.
+ * La classe ClusterSet modella l'insieme di cluster.
  * L'insieme di cluster è rappresentato da un array di cluster e da un indice che indica il numero di cluster presenti.
  */
 public class ClusterSet implements Serializable {
@@ -47,7 +47,7 @@ public class ClusterSet implements Serializable {
     }
 
     /**
-     * Inizializza i centroidi dei cluster con k tuple casuali del dataset.
+     * Inizializza i centroidi dei cluster con k tuple casuali del dataset, una per cluster.
      * @param data il dataset
      * @throws OutOfRangeSampleSize se il numero di tuple del dataset è minore del numero di cluster
      */
@@ -114,9 +114,9 @@ public class ClusterSet implements Serializable {
     }
 
     /**
-     * Restituisce la stringa che rappresenta le inormazioni sull'insieme di cluster relative al dataset specificato.
+     * Restituisce la stringa che rappresenta le informazioni sull'insieme di cluster relative al dataset specificato.
      * @param data il dataset
-     * @return la stringa che rappresenta le inormazioni sull'insieme di cluster relative al dataset specificato
+     * @return la stringa che rappresenta le informazioni sull'insieme di cluster relative al dataset specificato
      */
     public String toString(Data data) {
         String str = "";
