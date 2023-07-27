@@ -14,7 +14,7 @@ import java.util.TreeSet;
 
 /**
  * La classe TableData modella l'insieme di transazioni collezionate in una tabella. La singola transazione
- * è modellata dalla classe é {@link Example}.
+ * è modellata dalla classe {@link Example}.
  * 
  * La classe permette di ottenere i seguenti tipi di dati:
  * <ul>
@@ -49,7 +49,7 @@ public class TableData {
     /**
      * Il metodo getDistinctTransazioni permette di ottenere la lista di transazioni distinte presenti nella tabella specificata.
      * 
-     *     La lista di transazioni distince è modellata da una lista di oggetti {@link Example}.
+     * La lista di transazioni distinte è modellata da una lista di oggetti {@link Example}.
      * @param table Nome della tabella.
      * @return <code>list</code> Lista di transazioni distinte.
      * @throws SQLException Se si verifica un errore nell'esecuzione della query.
@@ -82,7 +82,7 @@ public class TableData {
     /**
      * Il metodo getDistinctColumnValues permette di ottenere l'insieme di valori distinti di una colonna specificata.
      * 
-     *     L'insieme di valori distinti è modellato da una collezione {@link Set} di oggetti.
+     * L'insieme di valori distinti è modellato da un {@link Set} di oggetti.
      * @param table Nome della tabella.
      * @param column Colonna della tabella.
      * @return <code>values</code> Insieme di valori distinti.
@@ -107,7 +107,7 @@ public class TableData {
     /**
      * Il metodo getAggregateColumnValue permette di ottenere il valore aggregato di una colonna specificata.
      * 
-     *     Il valore aggregato è modellato da un oggetto {@link Object}.
+     * Il valore aggregato è modellato da un {@link Object}.
      * @param table Nome della tabella.
      * @param column Colonna della tabella.
      * @param aggregate Tipo di aggregazione.
