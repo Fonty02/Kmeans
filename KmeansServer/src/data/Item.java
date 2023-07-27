@@ -46,15 +46,14 @@ abstract public class Item implements Serializable {
     }
 
     /**
-     * Restituisce la distanza tra l'item e l'oggetto passato come parametro.
+     * Metodo astratto che restituisce la distanza tra l'item e l'oggetto passato come parametro.
      * @param a oggetto di cui calcolare la distanza
      * @return distanza tra l'item e l'oggetto passato come parametro
      */
     abstract double distance(Object a);
 
     /**
-     * Modifica il membro value, assegnandogli il valore
-     * restituito da data.computePrototype(clusteredData,attribute)
+     * Modifica il membro value, assegnandogli il valore restituito da {@link Data#computePrototype(Set, Attribute)}
      * @param data dataset
      * @param clusteredData insieme di indici di righe
      */
