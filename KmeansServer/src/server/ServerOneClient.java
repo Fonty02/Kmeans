@@ -19,12 +19,12 @@ import java.sql.SQLException;
  * La classe estende {@link Thread} e effettua overriding del metodo {@link Thread#run()}.
  * La classe riceve una richiesta dal client e la esegue, inviando il risultato al client.
  * Le richieste che il server può ricevere sono:
- * <ul>
- *     <li>0: Connessione a un database</li>
- *     <li>1: Esegui K-Means</li>
- *     <li>2: Salva K-Means su un file</li>
- *     <li>3: Carica K-Means da un file</li>
- * </ul>
+ * <ol start="0">
+ *     <li>Connessione a un database</li>
+ *     <li>Esegui K-Means</li>
+ *     <li>Salva K-Means su un file</li>
+ *     <li>Carica K-Means da un file</li>
+ * </ol>
  * @see Thread
  */
 class ServerOneClient extends Thread {
@@ -79,9 +79,9 @@ class ServerOneClient extends Thread {
     }
 
     /**
-     * Il metodo run esegue il thread.
-     * 
-     * Il metodo esegue il thread, ricevendo una richiesta dal client con relativi parametri e inviando un messaggio di conferma.
+     * Il metodo run esegue la richiesta avanzata dal client.
+     * <p>
+     * Il metodo esegue la richiesta avanzata dal client con relativi parametri e inviando un messaggio di conferma.
      * Se la conferma è OK, esegue la richiesta e invia il risultato al client.
      * Se la conferma è negativa viene mandato al client il messaggio relativo al problema verificatosi.
      * In caso di errore nella comunicazione, stampa un messaggio di errore e chiude la comunicazione.
