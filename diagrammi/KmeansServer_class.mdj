@@ -2553,7 +2553,7 @@
 											"font": "Arial;13;1",
 											"left": 2349,
 											"top": 1095,
-											"width": 317.5986328125,
+											"width": 363.8603515625,
 											"height": 13,
 											"text": "data.Tuple"
 										},
@@ -2588,7 +2588,7 @@
 									"font": "Arial;13;0",
 									"left": 2344,
 									"top": 1088,
-									"width": 327.5986328125,
+									"width": 373.8603515625,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGI+ENvoxmyZIg="
@@ -2625,7 +2625,7 @@
 											"font": "Arial;13;0",
 											"left": 2349,
 											"top": 1118,
-											"width": 317.5986328125,
+											"width": 363.8603515625,
 											"height": 13,
 											"text": "-tuple: Item[]",
 											"horizontalAlignment": 0
@@ -2634,7 +2634,7 @@
 									"font": "Arial;13;0",
 									"left": 2344,
 									"top": 1113,
-									"width": 327.5986328125,
+									"width": 373.8603515625,
 									"height": 23
 								},
 								{
@@ -2659,7 +2659,7 @@
 											"font": "Arial;13;0",
 											"left": 2349,
 											"top": 1141,
-											"width": 317.5986328125,
+											"width": 363.8603515625,
 											"height": 13,
 											"text": "~Tuple(size: int)",
 											"horizontalAlignment": 0
@@ -2676,7 +2676,7 @@
 											"font": "Arial;13;0",
 											"left": 2349,
 											"top": 1156,
-											"width": 317.5986328125,
+											"width": 363.8603515625,
 											"height": 13,
 											"text": "+getLength(): int",
 											"horizontalAlignment": 0
@@ -2693,7 +2693,7 @@
 											"font": "Arial;13;0",
 											"left": 2349,
 											"top": 1171,
-											"width": 317.5986328125,
+											"width": 363.8603515625,
 											"height": 13,
 											"text": "+get(i: int): Item",
 											"horizontalAlignment": 0
@@ -2710,7 +2710,7 @@
 											"font": "Arial;13;0",
 											"left": 2349,
 											"top": 1186,
-											"width": 317.5986328125,
+											"width": 363.8603515625,
 											"height": 13,
 											"text": "~add(c: Item, i: int)",
 											"horizontalAlignment": 0
@@ -2727,9 +2727,9 @@
 											"font": "Arial;13;0",
 											"left": 2349,
 											"top": 1201,
-											"width": 317.5986328125,
+											"width": 363.8603515625,
 											"height": 13,
-											"text": "+getDistance(obj: Tuple)",
+											"text": "+getDistance(obj: Tuple): double",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2744,16 +2744,16 @@
 											"font": "Arial;13;0",
 											"left": 2349,
 											"top": 1216,
-											"width": 317.5986328125,
+											"width": 363.8603515625,
 											"height": 13,
-											"text": "+avgDistance(data: Data, clusteredData: Set<Integer>)",
+											"text": "+avgDistance(data: Data, clusteredData: Set<Integer>): double",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 2344,
 									"top": 1136,
-									"width": 327.5986328125,
+									"width": 373.8603515625,
 									"height": 98
 								},
 								{
@@ -2793,7 +2793,7 @@
 							"containerChangeable": true,
 							"left": 2344,
 							"top": 1088,
-							"width": 327.5986328125,
+							"width": 373.8603515625,
 							"height": 146,
 							"nameCompartment": {
 								"$ref": "AAAAAAGI+ENvoxmxoMU="
@@ -11692,6 +11692,15 @@
 									},
 									"name": "obj",
 									"type": "Tuple"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGJv+q80bUjHOw=",
+									"_parent": {
+										"$ref": "AAAAAAGI+EVBYxoNtkY="
+									},
+									"type": "double",
+									"direction": "return"
 								}
 							]
 						},
@@ -11720,6 +11729,15 @@
 									},
 									"name": "clusteredData",
 									"type": "Set<Integer>"
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGJv+ro9LbKicI=",
+									"_parent": {
+										"$ref": "AAAAAAGI+EV6ZxoW4OA="
+									},
+									"type": "double",
+									"direction": "return"
 								}
 							]
 						}
