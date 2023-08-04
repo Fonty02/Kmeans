@@ -3908,7 +3908,7 @@
 											"top": 1590,
 											"width": 125.3408203125,
 											"height": 13,
-											"text": "-PORT: int {readOnly}",
+											"text": "-PORT: int = 8080",
 											"horizontalAlignment": 0
 										}
 									],
@@ -12430,7 +12430,7 @@
 							"name": "PORT",
 							"visibility": "private",
 							"type": "int",
-							"isReadOnly": true
+							"defaultValue": "8080"
 						}
 					],
 					"operations": [
