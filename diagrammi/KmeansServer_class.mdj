@@ -4856,7 +4856,7 @@
 											"top": 542,
 											"width": 499.63671875,
 											"height": 13,
-											"text": "-DRIVER_CLASS_NAME: String {readOnly}",
+											"text": "-DRIVER_CLASS_NAME: String = \"com.mysql.cj.jdbc.Driver\" {readOnly}",
 											"horizontalAlignment": 0
 										},
 										{
@@ -12733,7 +12733,8 @@
 							"name": "DRIVER_CLASS_NAME",
 							"visibility": "private",
 							"type": "String",
-							"isReadOnly": true
+							"isReadOnly": true,
+							"defaultValue": "\"com.mysql.cj.jdbc.Driver\""
 						},
 						{
 							"_type": "UMLAttribute",
