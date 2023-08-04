@@ -4958,7 +4958,7 @@
 											"top": 632,
 											"width": 499.63671875,
 											"height": 13,
-											"text": "-con: Connection",
+											"text": "-conn: Connection",
 											"horizontalAlignment": 0
 										}
 									],
@@ -12798,7 +12798,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGI+HQpDB8uYQk="
 							},
-							"name": "con",
+							"name": "conn",
 							"visibility": "private",
 							"type": "Connection"
 						}
