@@ -4085,7 +4085,7 @@
 											"top": 1103,
 											"width": 213.1669921875,
 											"height": 13,
-											"text": "server.SeerverOneClient"
+											"text": "server.ServerOneClient"
 										},
 										{
 											"_type": "LabelView",
@@ -12491,7 +12491,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "server.SeerverOneClient",
+					"name": "server.ServerOneClient",
 					"attributes": [
 						{
 							"_type": "UMLAttribute",
