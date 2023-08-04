@@ -7,7 +7,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 /**
- * MainTest è la classe che funge da client per il server di clustering.
+ * <h2> MainTest è la classe che funge da client per il server di clustering. </h2>
  * <p>
  * Il client si connette al server e gli invia delle richieste.
  * In particolare il client può:
@@ -31,7 +31,7 @@ class MainTest {
 
 
     /**
-     * Costruttore di MainTest.
+     * <h4> Costruttore di MainTest. </h4>
      * <p>
      * Il costruttore si connette al server e inizializza i canali di input e output.
      * @param ip   l'indirizzo ip/dns del server
@@ -48,7 +48,7 @@ class MainTest {
     }
 
     /**
-     * Il metodo menu permette di scegliere una opzione tra quelle disponibili.
+     * <h4> Il metodo menu permette di scegliere una opzione tra quelle disponibili. </h4>
      * <p>
      * Il metodo stampa a video le opzioni disponibili e chiede all'utente di inserire un numero.
      * Il metodo controlla che il numero inserito sia valido e in caso contrario richiede all'utente di inserire un nuovo numero.
@@ -73,7 +73,7 @@ class MainTest {
     }
 
     /**
-     * Il metodo learningFromFile permette di caricare un clustering da un file.
+     * <h4> Il metodo learningFromFile permette di caricare un clustering da un file. </h4>
      * <p>
      * Il metodo chiede all'utente di inserire il nome del file da cui caricare il clustering.
      * Il nome del file è costituito da:
@@ -109,7 +109,7 @@ class MainTest {
 }
 
     /**
-     * Il metodo storeTableFromDb permette di inviare al server la richiesta per la connessione al database.
+     * <h4> Il metodo storeTableFromDb permette di inviare al server la richiesta per la connessione al database. </h4>
      * <p>
      * Il metodo chiede all'utente di inserire i dati necessari per connettersi al database. L'utente può utilizzare
      * dei valori di default oppure scegliere di inserire i dati manualmente.
@@ -175,7 +175,7 @@ class MainTest {
     }
 
     /**
-     * Il metodo learningFromDbTable permette di richiedere al server di creare un clustering.
+     * <h4> Il metodo learningFromDbTable permette di richiedere al server di creare un clustering. </h4>
      * <p>
      * Il cluster viene creato sulla tabella scelta in <code>storeTableFromDb</code>.
      * Il metodo chiede all'utente di inserire il numero di cluster da creare e il server risponde con un messaggio di conferma.
@@ -200,7 +200,7 @@ class MainTest {
     }
 
     /**
-     * Il metodo storeClusterInFile permette di richiedere al server di salvare il clustering su file.
+     * <h4> Il metodo storeClusterInFile permette di richiedere al server di salvare il clustering su file. </h4>
      * <p>
      * Il metodo chiede al server di salvare il clustering appena creato su file e il server risponde con un messaggio di conferma.
      * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
@@ -217,7 +217,7 @@ class MainTest {
     }
 
     /**
-     * Il metodo main permette di avviare il client.
+     * <h4> Il metodo main permette di avviare il client. </h4>
      * <p>
      * Il metodo prende in input da linea di comando l'indirizzo ip e la porta del server a cui connettersi.
      * Viene creato un oggetto di tipo MainTest e viene gestita l'interazione con l'utente tramite il metodo menu

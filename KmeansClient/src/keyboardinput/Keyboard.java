@@ -4,7 +4,8 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 /**
- * Keyboard è la classe che gestisce l'input da tastiera.
+ * <h2> Keyboard è la classe che gestisce l'input da tastiera. </h2>
+ * <p>
  * In particolare la classe permette di leggere le seguenti tipologie di input
  * <ul>
  *     <li>Stringhe</li>
@@ -13,19 +14,19 @@ import java.io.InputStreamReader;
  */
 public class Keyboard {
 
-	/**
-	 * Costruttore privato per evitare che venga istanziata la classe.
-	 */
-	private Keyboard() {
-	}
-
-	/**
+    /**
      * in è l'oggetto che permette di leggere l'input da tastiera.
      */
     private static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
+	/**
+	 * <h4> Costruttore privato per evitare che venga istanziata la classe. </h4>
+	 */
+	private Keyboard() {
+	}
+
     /**
-     * readString è il metodo che permette di leggere una stringa da tastiera.
+     * <h4> readString è il metodo che permette di leggere una stringa da tastiera. </h4>
      * <p>
      * In caso di errore nella lettura dell'input viene restituito <code>null</code> e viene stampato un messaggio di errore.
      *
@@ -43,7 +44,7 @@ public class Keyboard {
     }
 
     /**
-     * readInt è il metodo che permette di leggere un intero da tastiera.
+     * <h4> readInt è il metodo che permette di leggere un intero da tastiera. </h4>
      * <p>
      * Nel caso in cui la conversione a intero non avviene con successo viene stampato un messaggio di errore e
      * viene chiesto di reinserire il valore.
