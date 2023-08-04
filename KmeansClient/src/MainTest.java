@@ -132,7 +132,7 @@ class MainTest {
         out.writeObject(0);
         boolean def = false;
         do {
-            System.out.print("Vuoi usere dei valori di default per il database? (y/n)");
+            System.out.print("Vuoi usare dei valori di default per il database? (y/n)");
             String answer = Keyboard.readString();
             if (answer.equals("y")) {
                 def = true;
