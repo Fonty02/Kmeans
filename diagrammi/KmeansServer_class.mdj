@@ -1119,7 +1119,7 @@
 											"top": 709,
 											"width": 545.1748046875,
 											"height": 13,
-											"text": "-data: Listr<Example> {readOnly}",
+											"text": "-data: List<Example> {readOnly}",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1136,7 +1136,7 @@
 											"top": 724,
 											"width": 545.1748046875,
 											"height": 13,
-											"text": "-attributeSet: List<Attribute> {readOnly}",
+											"text": "-attributeSet: List<Attribute> = new LinkedList<>() {readOnly}",
 											"horizontalAlignment": 0
 										}
 									],
@@ -10756,7 +10756,7 @@
 							},
 							"name": "data",
 							"visibility": "private",
-							"type": "Listr<Example>",
+							"type": "List<Example>",
 							"isReadOnly": true
 						},
 						{
@@ -10768,7 +10768,8 @@
 							"name": "attributeSet",
 							"visibility": "private",
 							"type": "List<Attribute>",
-							"isReadOnly": true
+							"isReadOnly": true,
+							"defaultValue": "new LinkedList<>()"
 						}
 					],
 					"operations": [
