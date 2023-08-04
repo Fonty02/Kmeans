@@ -32,23 +32,13 @@
 \pagestyle{fancy}
 \everymath{\displaystyle}
 
-\newcommand*{\blankpage}{%
-    \null
-    \thispagestyle{empty}%
-    \addtocounter{page}{-1}%
-    \newpage
-}
 
 \begin{document}
   \input{front}
-  \blankpage
   \tableofcontents
-  \blankpage
   \input{intro}
-  \blankpage
   \input{funct}
-  \blankpage
   \input{guida}
-  \blankpage
   \input{guidautente}
+  \input{testcli}
 \end{document}
