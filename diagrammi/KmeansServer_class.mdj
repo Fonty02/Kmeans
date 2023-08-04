@@ -6056,7 +6056,7 @@
 											"top": 636,
 											"width": 288.65966796875,
 											"height": 13,
-											"text": "+TableShema(db: DbAccess, tableName: String)",
+											"text": "+TableSchema(db: DbAccess, tableName: String)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -13506,7 +13506,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGI+H9MiCDS2c0="
 							},
-							"name": "TableShema",
+							"name": "TableSchema",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
