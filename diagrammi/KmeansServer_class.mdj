@@ -5931,7 +5931,7 @@
 											"font": "Arial;13;1",
 											"left": 3885,
 											"top": 575,
-											"width": 279.9951171875,
+											"width": 288.65966796875,
 											"height": 13,
 											"text": "database.TableSchema"
 										},
@@ -5966,7 +5966,7 @@
 									"font": "Arial;13;0",
 									"left": 3880,
 									"top": 568,
-									"width": 289.9951171875,
+									"width": 298.65966796875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGI+H9MiCDWqsw="
@@ -6003,7 +6003,7 @@
 											"font": "Arial;13;0",
 											"left": 3885,
 											"top": 598,
-											"width": 279.9951171875,
+											"width": 288.65966796875,
 											"height": 13,
 											"text": "-db: DbAccess",
 											"horizontalAlignment": 0
@@ -6020,16 +6020,16 @@
 											"font": "Arial;13;0",
 											"left": 3885,
 											"top": 613,
-											"width": 279.9951171875,
+											"width": 288.65966796875,
 											"height": 13,
-											"text": "-tableSchema: List<Column>",
+											"text": "-tableSchema: List<Column> =  new ArrayList<>()",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 3880,
 									"top": 593,
-									"width": 289.9951171875,
+									"width": 298.65966796875,
 									"height": 38
 								},
 								{
@@ -6054,7 +6054,7 @@
 											"font": "Arial;13;0",
 											"left": 3885,
 											"top": 636,
-											"width": 279.9951171875,
+											"width": 288.65966796875,
 											"height": 13,
 											"text": "+TableShema(db: DbAccess, tableName: String)",
 											"horizontalAlignment": 0
@@ -6071,7 +6071,7 @@
 											"font": "Arial;13;0",
 											"left": 3885,
 											"top": 651,
-											"width": 279.9951171875,
+											"width": 288.65966796875,
 											"height": 13,
 											"text": "+getNumberOfAttributes(): int",
 											"horizontalAlignment": 0
@@ -6088,7 +6088,7 @@
 											"font": "Arial;13;0",
 											"left": 3885,
 											"top": 666,
-											"width": 279.9951171875,
+											"width": 288.65966796875,
 											"height": 13,
 											"text": "+getColumn(index: int): database.Column",
 											"horizontalAlignment": 0
@@ -6097,7 +6097,7 @@
 									"font": "Arial;13;0",
 									"left": 3880,
 									"top": 631,
-									"width": 289.9951171875,
+									"width": 298.65966796875,
 									"height": 53
 								},
 								{
@@ -6137,7 +6137,7 @@
 							"containerChangeable": true,
 							"left": 3880,
 							"top": 568,
-							"width": 289.9951171875,
+							"width": 298.65966796875,
 							"height": 116,
 							"nameCompartment": {
 								"$ref": "AAAAAAGI+H9MiCDVJ+E="
@@ -13495,7 +13495,8 @@
 							},
 							"name": "tableSchema",
 							"visibility": "private",
-							"type": "List<Column>"
+							"type": "List<Column>",
+							"defaultValue": " new ArrayList<>()"
 						}
 					],
 					"operations": [
