@@ -10,10 +10,6 @@ import java.util.List;
 public class Example implements Comparable<Example> {
 
     /**
-     * Costruttore della classe Example.
-     */
-    Example() {}
-    /**
      * Lista di oggetti che rappresentano una transazione.
      */
     private final List<Object> example = new ArrayList<>();

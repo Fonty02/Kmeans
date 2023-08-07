@@ -12,12 +12,12 @@ abstract public class Item implements Serializable {
     /**
      * Attributo dell'item.
      */
-    Attribute attribute;
+    private Attribute attribute;
 
     /**
      * Valore dell'item.
      */
-    Object value;
+    private Object value;
 
     /**
      * Costruttore della classe Item.
@@ -27,6 +27,14 @@ abstract public class Item implements Serializable {
     Item(Attribute attribute, Object value) {
         this.attribute = attribute;
         this.value = value;
+    }
+
+    /**
+     * Restituisce l'attributo dell'item.
+     * @return attributo dell'item
+     */
+    Attribute getAttribute() {
+        return this.attribute;
     }
 
     /**

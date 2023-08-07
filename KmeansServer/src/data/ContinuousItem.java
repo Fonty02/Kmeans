@@ -21,7 +21,7 @@ class ContinuousItem extends Item {
      * @return distanza tra l'item e l'oggetto passato come parametro
      */
     double distance(Object a) {
-        return Math.abs(((ContinuousAttribute) this.attribute).getScaledValue((Double) value) - ((ContinuousAttribute) this.attribute).getScaledValue((Double) a));
+        return Math.abs(((ContinuousAttribute) getAttribute()).getScaledValue((Double) getValue()) - ((ContinuousAttribute) getAttribute()).getScaledValue((Double) a));
     }
 
 }
