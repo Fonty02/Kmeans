@@ -21,11 +21,13 @@ import java.net.Socket;
 class MainTest {
 
     /**
-     * out è il canale di output verso il server. Viene usato per inviare messaggi al server.
+     * <h4>Canale di output verso il server.</h4>
+     * Viene usato per inviare messaggi al server.
      */
     private final ObjectOutputStream out;
     /**
-     * in è il canale di input dal server. Viene usato per ricevere messaggi dal server.
+     * <h4>Canale di input dal server.</h4>
+     * Viene usato per ricevere messaggi dal server.
      */
     private final ObjectInputStream in;
 
@@ -33,7 +35,7 @@ class MainTest {
     /**
      * <h4> Costruttore di MainTest. </h4>
      * <p>
-     * Il costruttore si connette al server e inizializza i canali di input e output.
+     * Si connette al server e inizializza i canali di input e output.
      * @param ip   l'indirizzo ip/dns del server
      * @param port la porta sulla quale il processo server è in ascolto
      * @throws IOException se si verifica un errore di I/O
@@ -48,16 +50,16 @@ class MainTest {
     }
 
     /**
-     * <h4> Il metodo menu permette di scegliere una opzione tra quelle disponibili. </h4>
+     * <h4> Permette di scegliere una opzione tra quelle disponibili. </h4>
      * <p>
-     * Il metodo stampa a video le opzioni disponibili e chiede all'utente di inserire un numero.
-     * Il metodo controlla che il numero inserito sia valido e in caso contrario richiede all'utente di inserire un nuovo numero.
+     * Stampa a video le opzioni disponibili e chiede all'utente di inserire un numero.
+     * Controlla che il numero inserito sia valido e in caso contrario richiede all'utente di inserire un nuovo numero.
      * Le opzioni sono:
      * <ul>
      *  <li>Caricare una tabella da un database</li>
      *  <li>Caricare una tabella da un file</li>
      * </ul>
-     * @return <code>answer</code>, ovvero la risposta dell'utente
+     * @return La risposta dell'utente
      */
     private int menu() {
         int answer;
@@ -73,20 +75,20 @@ class MainTest {
     }
 
     /**
-     * <h4> Il metodo learningFromFile permette di caricare un clustering da un file. </h4>
+     * <h4> Permette di caricare un clustering da un file. </h4>
      * <p>
-     * Il metodo chiede all'utente di inserire il nome del file da cui caricare il clustering.
+     * Chiede all'utente di inserire il nome del file da cui caricare il clustering.
      * Il nome del file è costituito da:
      * <ul>
      *     <li>Nome del database</li>
      *     <li>Nome della tabella</li>
      *     <li>Numero di cluster</li>
      * </ul>
-     * Il metodo invia al server il nome del file e riceve dal server un messaggio di conferma.
+     * Invia al server il nome del file e riceve dal server un messaggio di conferma.
      * Se il messaggio di conferma è "OK" il metodo riceve dal server il clustering e lo stampa a video,
      * altrimenti lancia un'eccezione di tipo ServerException.
      *
-     * @return <code>result</code>, ovvero il clustering caricato dal file
+     * @return Il clustering caricato dal file
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
      * @throws ClassNotFoundException se si verifica un errore di classe
@@ -109,9 +111,9 @@ class MainTest {
 }
 
     /**
-     * <h4> Il metodo storeTableFromDb permette di inviare al server la richiesta per la connessione al database. </h4>
+     * <h4> Permette di inviare al server la richiesta per la connessione al database. </h4>
      * <p>
-     * Il metodo chiede all'utente di inserire i dati necessari per connettersi al database. L'utente può utilizzare
+     * Chiede all'utente di inserire i dati necessari per connettersi al database. L'utente può utilizzare
      * dei valori di default oppure scegliere di inserire i dati manualmente.
      * I dati sono:
      * <ul>
@@ -122,7 +124,7 @@ class MainTest {
      *     <li>Nome utente con il quale accedere al database</li>
      *     <li>Password per accedere al database</li>
      * </ul>
-     * Il metodo invia al server i dati inseriti e riceve dal server un messaggio di conferma.
+     * Invia al server i dati inseriti e riceve dal server un messaggio di conferma.
      * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
@@ -175,14 +177,14 @@ class MainTest {
     }
 
     /**
-     * <h4> Il metodo learningFromDbTable permette di richiedere al server di creare un clustering. </h4>
+     * <h4> Permette di richiedere al server di creare un clustering. </h4>
      * <p>
      * Il cluster viene creato sulla tabella scelta in <code>storeTableFromDb</code>.
      * Il metodo chiede all'utente di inserire il numero di cluster da creare e il server risponde con un messaggio di conferma.
      * Se il messaggio di conferma è "OK" allora viene stampato a video il numero di cluster creati e viene restituito il clustering.
      * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
      *
-     * @return <code>result</code>, ovvero il clustering caricato dal database
+     * @return Il clustering caricato dal database
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
      * @throws ClassNotFoundException se si verifica un errore di classe
@@ -200,9 +202,9 @@ class MainTest {
     }
 
     /**
-     * <h4> Il metodo storeClusterInFile permette di richiedere al server di salvare il clustering su file. </h4>
+     * <h4> Permette di richiedere al server di salvare il clustering su file. </h4>
      * <p>
-     * Il metodo chiede al server di salvare il clustering appena creato su file e il server risponde con un messaggio di conferma.
+     * Chiede al server di salvare il clustering appena creato su file e il server risponde con un messaggio di conferma.
      * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
      *
      * @throws ServerException        se il server invia un messaggio di errore
@@ -217,9 +219,9 @@ class MainTest {
     }
 
     /**
-     * <h4> Il metodo main permette di avviare il client. </h4>
+     * <h4> Permette di avviare il client. </h4>
      * <p>
-     * Il metodo prende in input da linea di comando l'indirizzo ip e la porta del server a cui connettersi.
+     * Prende in input da linea di comando l'indirizzo ip e la porta del server a cui connettersi.
      * Viene creato un oggetto di tipo MainTest e viene gestita l'interazione con l'utente tramite il metodo menu
      * e la comunicazione con il server tramite i metodi:
      *  <ul>
@@ -228,7 +230,7 @@ class MainTest {
      *      <li><code>storeClusterInFile</code></li>
      *      <li><code>learningFromFile</code></li>
      * </ul>
-     * Il metodo termina quando l'utente sceglie di uscire dal programma o quando si verifica un errore che non può essere gestito.
+     * Termina quando l'utente sceglie di uscire dal programma o quando si verifica un errore che non può essere gestito.
      *
      * @param args indirizzo ip/dns e porta del server a cui connettersi
      * @see #storeTableFromDb()
