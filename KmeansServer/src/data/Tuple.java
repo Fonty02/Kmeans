@@ -3,26 +3,61 @@ package data;
 import java.io.Serializable;
 import java.util.Set;
 
+/**
+ * <h2>La classe Tuple che rappresenta una tupla del dataset.</h2>
+ * <p>
+ * Una tupla è una sequenza di coppie (attributo, valore).
+ * </p>
+ */
 public class Tuple implements Serializable {
-    private Item[] tuple; //è una tupla del database, quindi un insieme di Attributi (nome e index) e valore
 
+    /**
+     * <h4>Oggetti di tipo {@link Item}.</h4>
+     * @see Item
+     */
+    private Item[] tuple;
+
+    /**
+     * <h4>Costruttore della tupla.</h4>
+     * @param size numero di item che costituirà la tupla
+     */
     Tuple(int size) {
         tuple = new Item[size];
     }
 
+    /**
+     * <h4>Restituisce la lunghezza della tupla.</h4>
+     * @return La lunghezza della tupla
+     */
     public int getLength() {
         return tuple.length;
     }
 
+    /**
+     * <h4>Restituisce l'item di indice <code>i</code> della tupla.</h4>
+     * @param i indice dell'item
+     * @return L'item di indice i della tupla
+     */
     public Item get(int i) {
         return tuple[i];
     }
 
+    /**
+     * <h4>Aggiunge l'item nella posizione specificata. </h4>
+     * @param c item da aggiungere
+     * @param i indice dell'array tuple in cui aggiungere l'item c
+     */
     void add(Item c, int i) {
         tuple[i] = c;
     }
 
-    //distanza tra la tupla passata come parametro e la tupla corrente che richiama il metodo
+    /**
+     * <h4> Determina la distanza tra la tupla riferita da <code>obj</code> e la tupla corrente. </h4>
+     * <p>La distanza è ottenuta come la somma delle
+     * distanze tra gli item in posizioni eguali nelle due tuple. </p>
+     * @param obj tupla da confrontare con la tupla corrente
+     * @return La distanza tra la tupla corrente e la tupla riferita da obj
+     */
     public double getDistance(Tuple obj) {
         double distance = 0;
         for (int i = 0; i < tuple.length; i++)
@@ -30,7 +65,14 @@ public class Tuple implements Serializable {
         return distance;
     }
 
-    // media delle distanze tra la tupla corrente e tutte le tuple ottenibili dalle righe del dataset data aventi indice di righe in clusteredData
+    /**
+     * <h4> Restituisce la media delle distanze tra la tupla corrente e quelle ottenibili dalle righe della matrice in <code>data</code> aventi indice in
+     * <code>clusteredData</code>.</h4>
+     * @param data dataset
+     * @param clusteredData insieme di indici di righe della matrice data
+     * @return La media delle distanze tra la tupla corrente e quelle ottenibili dalle righe della matrice in <code>data</code> aventi indice in
+     *      * <code>clusteredData</code>.
+     */
     public double avgDistance(Data data, Set<Integer> clusteredData) {
         double p, sumD = 0.0;
         for (int i : clusteredData) {
