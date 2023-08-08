@@ -599,7 +599,7 @@
 											"top": 197,
 											"width": 213.1669921875,
 											"height": 13,
-											"text": "-int: ObjectInputStream {readOnly}",
+											"text": "-in: ObjectInputStream {readOnly}",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1148,7 +1148,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGI+Ij769txvGw="
 							},
-							"name": "int",
+							"name": "in",
 							"visibility": "private",
 							"type": "ObjectInputStream",
 							"isReadOnly": true
