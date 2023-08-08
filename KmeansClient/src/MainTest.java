@@ -12,10 +12,8 @@ import java.net.Socket;
  * Il client si connette al server e gli invia delle richieste.
  * In particolare il client può:
  * <ul>
- *     <li>Caricare una tabella da un database</li>
+ *     <li>Caricare una tabella da un database ed eseguirne il clustering</li>
  *     <li>Caricare una tabella da un file</li>
- *     <li>Chiedere al server di eseguire il clustering</li>
- *     <li>Chiedere al server di salvare il clustering su file</li>
  * </ul>
  */
 class MainTest {
@@ -182,12 +180,12 @@ class MainTest {
      * Il cluster viene creato sulla tabella scelta in <code>storeTableFromDb</code>.
      * Il metodo chiede all'utente di inserire il numero di cluster da creare e il server risponde con un messaggio di conferma.
      * Se il messaggio di conferma è "OK" allora viene stampato a video il numero di cluster creati e viene restituito il clustering.
-     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
+     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo <code>ServerException</code>.
      *
      * @return Il clustering caricato dal database
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
-     * @throws ClassNotFoundException se si verifica un errore di classe
+     * @throws ClassNotFoundException se una classe non viene trovata
      */
     private String learningFromDbTable() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(1);
@@ -202,14 +200,14 @@ class MainTest {
     }
 
     /**
-     * <h4> Permette di richiedere al server di salvare il clustering su file. </h4>
+     * <h4> Salva il clustering su file. </h4>
      * <p>
-     * Chiede al server di salvare il clustering appena creato su file e il server risponde con un messaggio di conferma.
-     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
+     * Il server salva il clustering appena creato su file e il server risponde con un messaggio di conferma.
+     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo <code>ServerException</code>.
      *
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
-     * @throws ClassNotFoundException se si verifica un errore di classe
+     * @throws ClassNotFoundException se una classe non viene trovata
      */
     private void storeClusterInFile() throws ServerException, IOException, ClassNotFoundException {
         out.writeObject(2);
@@ -222,21 +220,10 @@ class MainTest {
      * <h4> Permette di avviare il client. </h4>
      * <p>
      * Prende in input da linea di comando l'indirizzo ip e la porta del server a cui connettersi.
-     * Viene creato un oggetto di tipo MainTest e viene gestita l'interazione con l'utente tramite il metodo menu
-     * e la comunicazione con il server tramite i metodi:
-     *  <ul>
-     *      <li><code>storeTableFromDb</code></li>
-     *      <li><code>learningFromDbTable</code></li>
-     *      <li><code>storeClusterInFile</code></li>
-     *      <li><code>learningFromFile</code></li>
-     * </ul>
+     * Viene creato un oggetto di tipo MainTest e viene gestita l'interazione tra client e server.
      * Termina quando l'utente sceglie di uscire dal programma o quando si verifica un errore che non può essere gestito.
      *
      * @param args indirizzo ip/dns e porta del server a cui connettersi
-     * @see #storeTableFromDb()
-     * @see #learningFromDbTable()
-     * @see #storeClusterInFile()
-     * @see #learningFromFile()
      */
     public static void main(String[] args) {
         String ip;
