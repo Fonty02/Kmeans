@@ -12,7 +12,7 @@ import java.util.Set;
 public class Tuple implements Serializable {
 
     /**
-     * <h4>Oggetti di tipo Item.</h4>
+     * <h4>Oggetti di tipo {@link Item}.</h4>
      * @see Item
      */
     private Item[] tuple;
@@ -34,7 +34,7 @@ public class Tuple implements Serializable {
     }
 
     /**
-     * <h4>Restituisce l'item di indice i della tupla.</h4>
+     * <h4>Restituisce l'item di indice <code>i</code> della tupla.</h4>
      * @param i indice dell'item
      * @return L'item di indice i della tupla
      */
@@ -52,7 +52,7 @@ public class Tuple implements Serializable {
     }
 
     /**
-     * <h4> Determina la distanza tra la tupla riferita da obj e la tupla corrente. </h4>
+     * <h4> Determina la distanza tra la tupla riferita da <code>obj</code> e la tupla corrente. </h4>
      * <p>La distanza è ottenuta come la somma delle
      * distanze tra gli item in posizioni eguali nelle due tuple. </p>
      * @param obj tupla da confrontare con la tupla corrente
@@ -66,11 +66,12 @@ public class Tuple implements Serializable {
     }
 
     /**
-     * <h4> Restituisce la media delle distanze tra la tupla corrente e quelle ottenibili dalle righe della matrice in data aventi indice in
-     * clusteredData.</h4>
+     * <h4> Restituisce la media delle distanze tra la tupla corrente e quelle ottenibili dalle righe della matrice in <code>data</code> aventi indice in
+     * <code>clusteredData</code>.</h4>
      * @param data dataset
      * @param clusteredData insieme di indici di righe della matrice data
-     * @return La media delle distanze tra la tupla corrente e quelle ottenibili dalle righe della matrice in data aventi indice in clusteredData
+     * @return La media delle distanze tra la tupla corrente e quelle ottenibili dalle righe della matrice in <code>data</code> aventi indice in
+     *      * <code>clusteredData</code>.
      */
     public double avgDistance(Data data, Set<Integer> clusteredData) {
         double p, sumD = 0.0;

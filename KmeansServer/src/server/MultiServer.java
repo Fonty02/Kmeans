@@ -8,7 +8,7 @@ import java.net.Socket;
  * <h2>La classe MultiServer implementa il server multithread.</h2>
  * <p>
  * Il server multithread è un server che può gestire più client contemporaneamente.
- * Viene creato l'oggetto ServerSocket che si mette in ascolto su una specifica porta.
+ * Viene creato l'oggetto <code>ServerSocket</code> che si mette in ascolto su una specifica porta.
  * Quando viene stabilita una connessione con un client, viene creato un oggetto ServerOneClient che gestisce la comunicazione con quel client.
  * </p>
  * @see ServerOneClient
@@ -33,11 +33,11 @@ class MultiServer {
     }
 
     /**
-     * <h4>Crea il ServerSocket e si mette in ascolto su una specifica porta.</h4>
+     * <h4>Crea il <code>ServerSocket</code> e si mette in ascolto su una specifica porta.</h4>
      * <p>
      * Quando viene stabilita una connessione con un client (viene accettato il Socket del client), viene creato un oggetto {@link ServerOneClient} che gestisce la comunicazione con quel client.
-     * In caso di errore nella creazione del ServerSocket, viene stampato un messaggio di errore e il programma termina.
-     * In caso di errore nell'accept del ServerSocket, viene stampato un messaggio di errore, liberata la porta e il programma termina.
+     * In caso di errore nella creazione del <code>ServerSocket</code>, viene stampato un messaggio di errore e il programma termina.
+     * In caso di errore nell'accept del <code>ServerSocket</code>, viene stampato un messaggio di errore, liberata la porta e il programma termina.
      * </p>
      * @see ServerOneClient
      * @see ServerSocket

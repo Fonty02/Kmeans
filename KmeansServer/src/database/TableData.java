@@ -39,7 +39,8 @@ public class TableData {
     /**
      * <h4>Costruttore della classe.</h4>
      *
-     * @param db Oggetto DbAccess che permette la connessione al database.
+     * @param db Oggetto {@link DbAccess} che permette la connessione al database.
+     * @see DbAccess
      */
     public TableData(DbAccess db) {
         this.db = db;

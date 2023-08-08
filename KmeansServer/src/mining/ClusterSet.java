@@ -15,6 +15,7 @@ public class ClusterSet implements Serializable {
 
     /**
      * <h4>Array di Cluster.</h4>
+     * @see Cluster
      */
     private final Cluster[] C;
 

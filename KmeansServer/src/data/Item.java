@@ -61,7 +61,7 @@ abstract public class Item implements Serializable {
     abstract double distance(Object a);
 
     /**
-     * <h4>Modifica il membro value, assegnandogli il valore restituito da {@link Data#computePrototype(Set, Attribute)}</h4>
+     * <h4>Modifica il membro <code>value</code>, assegnandogli il valore restituito da {@link Data#computePrototype(Set, Attribute)}</h4>
      * @param data dataset
      * @param clusteredData insieme di indici di righe
      */

@@ -20,7 +20,7 @@ public class Keyboard {
     private static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 	/**
-	 * <h4> Costruttore privato. </h4>
+	 * <h4> Costruttore. </h4>
 	 */
 	private Keyboard() {
 	}
