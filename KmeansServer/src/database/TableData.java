@@ -13,8 +13,8 @@ import java.util.TreeSet;
 
 
 /**
- * La classe TableData modella l'insieme di transazioni collezionate in una tabella. La singola transazione
- * è modellata dalla classe {@link Example}.
+ * <h2>La classe TableData modella l'insieme di transazioni collezionate in una tabella.</h2>
+ * <p>La singola transazione è modellata dalla classe {@link Example}.
  * 
  * La classe permette di ottenere i seguenti tipi di dati:
  * <ul>
@@ -22,7 +22,6 @@ import java.util.TreeSet;
  *     <li>Insieme di valori distinti di una colonna</li>
  *     <li>Valore aggregato di una colonna</li>
  * </ul>
- *
  * @see DbAccess
  * @see TableSchema
  * @see Column
@@ -33,12 +32,12 @@ import java.util.TreeSet;
 public class TableData {
 
     /**
-     * Riferimento all'oggetto DbAccess che permette la connessione al database.
+     * <h4>Connessione al database.</h4>
      */
     private final DbAccess db;
 
     /**
-     * Costruttore della classe TableData.
+     * <h4>Costruttore della classe.</h4>
      *
      * @param db Oggetto DbAccess che permette la connessione al database.
      */
@@ -47,11 +46,12 @@ public class TableData {
     }
 
     /**
-     * Il metodo getDistinctTransazioni permette di ottenere la lista di transazioni distinte presenti nella tabella specificata.
-     * 
+     * <h4>Permette di ottenere la lista di transazioni distinte presenti nella tabella specificata.</h4>
+     * <p>
      * La lista di transazioni distinte è modellata da una lista di oggetti {@link Example}.
+     * </p>
      * @param table Nome della tabella.
-     * @return <code>list</code> Lista di transazioni distinte.
+     * @return La lista di transazioni distinte.
      * @throws SQLException Se si verifica un errore nell'esecuzione della query.
      * @throws EmptySetException Se il risultato della query è vuoto.
      */
@@ -80,12 +80,13 @@ public class TableData {
     }
 
     /**
-     * Il metodo getDistinctColumnValues permette di ottenere l'insieme di valori distinti di una colonna specificata.
-     * 
+     * <h4>Permette di ottenere l'insieme di valori distinti di una colonna specificata.</h4>
+     * <p>
      * L'insieme di valori distinti è modellato da un {@link Set} di oggetti.
+     * </p>
      * @param table Nome della tabella.
      * @param column Colonna della tabella.
-     * @return <code>values</code> Insieme di valori distinti.
+     * @return L'insieme di valori distinti.
      * @throws SQLException Se si verifica un errore nell'esecuzione della query.
      */
     public Set<Object> getDistinctColumnValues(String table, Column column) throws SQLException {
@@ -105,15 +106,16 @@ public class TableData {
     }
 
     /**
-     * Il metodo getAggregateColumnValue permette di ottenere il valore aggregato di una colonna specificata.
-     * 
+     * <h4>Permette di ottenere il valore aggregato di una colonna specificata.</h4>
+     * <p>
      * Il valore aggregato è modellato da un {@link Object}.
+     * </p>
      * @param table Nome della tabella.
      * @param column Colonna della tabella.
      * @param aggregate Tipo di aggregazione.
-     * @return <code>o</code> Valore aggregato.
-     * @throws SQLException Se si verifica un errore nell'esecuzione della query.
-     * @throws NoValueException Se il risultato della query è vuoto.
+     * @return Il valore aggregato.
+     * @throws SQLException se si verifica un errore nell'esecuzione della query.
+     * @throws NoValueException se il risultato della query è vuoto.
      * @see QUERY_TYPE
      */
     public Object getAggregateColumnValue(String table, Column column, QUERY_TYPE aggregate) throws SQLException, NoValueException {

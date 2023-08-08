@@ -4,23 +4,23 @@ import java.io.Serializable;
 import java.util.Set;
 
 /**
- * La classe astratta Item rappresenta un generico item di un dataset.
- * Un item è una coppia (attributo, valore).
+ * <h2>La classe astratta Item rappresenta un generico item di un dataset.</h2>
+ * <p>Un item è una coppia (attributo, valore).</p>
  */
 abstract public class Item implements Serializable {
 
     /**
-     * Attributo dell'item.
+     * <h4>Attributo dell'item.</h4>
      */
     private Attribute attribute;
 
     /**
-     * Valore dell'item.
+     * <h4>Valore dell'item.</h4>
      */
     private Object value;
 
     /**
-     * Costruttore della classe Item.
+     * <h4>Costruttore dell'item.</h4>
      * @param attribute Attributo dell'item.
      * @param value Valore dell'item.
      */
@@ -30,38 +30,38 @@ abstract public class Item implements Serializable {
     }
 
     /**
-     * Restituisce l'attributo dell'item.
-     * @return attributo dell'item
+     * <h4>Restituisce l'attributo dell'item.</h4>
+     * @return L'attributo dell'item
      */
     Attribute getAttribute() {
         return this.attribute;
     }
 
     /**
-     * Restituisce il valore dell'item.
-     * @return valore dell'item
+     * <h4>Restituisce il valore dell'item.</h4>
+     * @return Il valore dell'item
      */
     Object getValue() {
         return this.value;
     }
 
     /**
-     * Restituisce la stringa rappresentante l'item.
-     * @return stringa rappresentante il valore dell'item
+     * <h4>Restituisce la stringa rappresentante l'item.</h4>
+     * @return La stringa rappresentante il valore dell'item
      */
     public String toString() {
         return this.value.toString();
     }
 
     /**
-     * Metodo astratto che restituisce la distanza tra l'item e l'oggetto passato come parametro.
+     * <h4>Restituisce la distanza tra l'item e l'oggetto passato come parametro.</h4>
      * @param a oggetto di cui calcolare la distanza
-     * @return distanza tra l'item e l'oggetto passato come parametro
+     * @return La distanza tra l'item e l'oggetto passato come parametro
      */
     abstract double distance(Object a);
 
     /**
-     * Modifica il membro value, assegnandogli il valore restituito da {@link Data#computePrototype(Set, Attribute)}
+     * <h4>Modifica il membro value, assegnandogli il valore restituito da {@link Data#computePrototype(Set, Attribute)}</h4>
      * @param data dataset
      * @param clusteredData insieme di indici di righe
      */

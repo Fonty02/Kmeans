@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 /**
- * <h2> Keyboard è la classe che gestisce l'input da tastiera. </h2>
+ * <h2> La classe Keyboard gestisce l'input da tastiera. </h2>
  * <p>
  * In particolare la classe permette di leggere le seguenti tipologie di input
  * <ul>
@@ -20,7 +20,7 @@ public class Keyboard {
     private static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 	/**
-	 * <h4> Costruttore privato per evitare che venga istanziata la classe. </h4>
+	 * <h4> Costruttore privato. </h4>
 	 */
 	private Keyboard() {
 	}
@@ -50,7 +50,7 @@ public class Keyboard {
      * viene chiesto di reinserire il valore.
      * Nel caso in cui la lettura dell'input da tastiera non avviene con successo viene restituito -1 e viene stampato un messaggio di errore.
      *
-     * @return l'intero letto da tastiera (-1 in caso di errore).
+     * @return L'intero letto da tastiera (-1 in caso di errore).
      */
 
     public static int readInt() {

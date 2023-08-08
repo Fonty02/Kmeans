@@ -3,22 +3,22 @@ package data;
 import java.io.Serializable;
 
 /**
- * La classe astratta Attribute rappresenta un generico attributo di un dataset.
+ * <h2>La classe astratta Attribute rappresenta un generico attributo di un dataset.</h2>
  */
 abstract class Attribute implements Serializable {
 
     /**
-     * Nome simbolico dell'attributo.
+     * <h4>Nome simbolico dell'attributo.</h4>
      */
     private final String name;
 
     /**
-     * Identificativo numerico dell'attributo all'interno del dataset.
+     * <h4>Identificativo numerico dell'attributo all'interno del dataset.</h4>
      */
     private final int index;
 
     /**
-     * Costruttore della classe Attribute.
+     * <h4>Costruttore dell'attributo.</h4>
      * @param name Nome simbolico dell'attributo.
      * @param index Identificativo numerico dell'attributo all'interno del dataset.
      */
@@ -28,24 +28,24 @@ abstract class Attribute implements Serializable {
     }
 
     /**
-     * Metodo che restituisce il nome dell'attributo.
-     * @return Nome dell'attributo.
+     * <h4>Restituisce il nome dell'attributo.</h4>
+     * @return Il nome dell'attributo.
      */
     String getName() {
         return this.name;
     }
 
     /**
-     * Metodo che restituisce l'identificativo numerico dell'attributo all'interno del dataset.
-     * @return Identificativo numerico dell'attributo all'interno del dataset.
+     * <h4>Restituisce l'identificativo numerico dell'attributo all'interno del dataset.</h4>
+     * @return L'identificativo numerico dell'attributo all'interno del dataset.
      */
     int getIndex() {
         return this.index;
     }
 
     /**
-     * Metodo che restituisce la stringa rappresentante l'attributo.
-     * @return Nome dell'attributo.
+     * <h4>Restituisce la stringa rappresentante l'attributo.</h4>
+     * @return La stringa contenente il nome dell'attributo.
      */
     public String toString() {
         return this.name;

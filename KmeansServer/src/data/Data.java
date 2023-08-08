@@ -6,43 +6,44 @@ import java.sql.SQLException;
 import java.util.*;
 
 /**
- * Classe che rappresenta un dataset.
- * 
+ * <h2>La classe Data rappresenta un dataset.</h2>
+ * <p>
  * Contiene un insieme di oggetti {@link Example} rappresentanti le transazioni e un insieme di oggetti {@link Attribute} rappresentanti gli attributi.
+ * </p>
  */
 public class Data {
 
     /**
-     * Insieme di oggetti {@link Example} rappresentanti le transazioni.
+     * <h4>Insieme di oggetti {@link Example} rappresentanti le transazioni.</h4>
      */
     private final List<Example> data;
 
     /**
-     * Numero di transazioni.
+     * <h4>Numero di transazioni.</h4>
      */
     private final int numberOfExamples;
 
     /**
-     * Insieme di oggetti {@link Attribute} rappresentanti gli attributi.
+     * <h4>Insieme di oggetti {@link Attribute} rappresentanti gli attributi.</h4>
      */
     private final List<Attribute> attributeSet = new LinkedList<>();
 
 
     /**
-     * Costruttore della classe.
-     * 
+     * <h4>Costruttore.</h4>
+     * <p>
      * Legge i dati dal database e li memorizza.
-     *
+     * </p>
      * @param server   nome del server
      * @param port     numero della porta
      * @param database nome del database
      * @param user_id  nome utente
      * @param password password
      * @param table    nome della tabella
-     * @throws SQLException              eccezione lanciata in caso di errori nella comunicazione con il database
-     * @throws EmptySetException         eccezione lanciata in caso di insieme vuoto
-     * @throws DatabaseConnectionException eccezione lanciata in caso di errore di connessione al database
-     * @throws NoValueException          eccezione lanciata in caso di valore non presente
+     * @throws SQLException              in caso di errori nella comunicazione con il database
+     * @throws EmptySetException         in caso di insieme vuoto
+     * @throws DatabaseConnectionException in caso di errore di connessione al database
+     * @throws NoValueException          in caso di valore non presente
      */
     public Data(String server, int port, String database, String user_id, String password, String table) throws SQLException, EmptySetException, DatabaseConnectionException, NoValueException {
         DbAccess dbAccess = new DbAccess(server, port, database, user_id, password);
@@ -72,26 +73,26 @@ public class Data {
     }
 
     /**
-     * Restituisce il numero di transazioni.
-     * @return numero di transizioni.
+     * <h4>Restituisce il numero di transazioni.</h4>
+     * @return Il numero di transizioni.
      */
     public int getNumberOfExamples() {
         return this.numberOfExamples;
     }
 
     /**
-     * Restituisce il numero di attributi.
-     * @return numero di attributi.
+     * <h4>Restituisce il numero di attributi.</h4>
+     * @return Il numero di attributi.
      */
     public int getNumberOfAttributes() {
         return this.attributeSet.size();
     }
     
     /**
-     * Restituisce l'oggetto specificato dagli indici di riga e colonna.
+     * <h4>Restituisce l'oggetto specificato dagli indici di riga e colonna.</h4>
      * @param exampleIndex indice di riga
      * @param attributeIndex indice di colonna
-     * @return oggetto specificato dagli indici di riga e colonna
+     * @return L'oggetto specificato dagli indici di riga e colonna
      */
     public Object getAttributeValue(int exampleIndex, int attributeIndex) {
         return this.data.get(exampleIndex).get(attributeIndex);
@@ -99,8 +100,8 @@ public class Data {
 
 
     /**
-     * Restituiscee la stringa rappreseentante il dataset.
-     * @return stringa rappresentante il dataset
+     * <h4>Restituisce la stringa rappresentante il dataset.</h4>
+     * @return La stringa rappresentante il dataset
      */
     public String toString() {
         String s = "";
@@ -120,9 +121,9 @@ public class Data {
     
 
     /**
-     * Restituisce la tupla sull'indice di riga index.
+     * <h4>Restituisce la tupla sull'indice di riga index.</h4>
      * @param index indice di riga
-     * @return tupla sull'indice di riga index
+     * @return La tupla sull'indice di riga index
      * @see Tuple
      */
     public Tuple getItemSet(int index) {
@@ -137,10 +138,10 @@ public class Data {
     }
 
     /**
-     * Restituisce un array di k interi generati casualmente e che non si ripetono.
+     * <h4>Restituisce un array di k interi distinti generati casualmente.</h4>
      * @param k numero di interi da generare
-     * @return array di k interi generati casualmente e che non si ripetono
-     * @throws OutOfRangeSampleSize eccezione lanciata in caso di numero di cluster non valido
+     * @return L'array di k interi distinti generati casualmente
+     * @throws OutOfRangeSampleSize in caso di numero di cluster non valido
      */
     public int[] sampling(int k) throws OutOfRangeSampleSize {
         if (k <= 0 || k > data.size())
@@ -167,10 +168,10 @@ public class Data {
     }
 
     /**
-     * Restituisce true se le righe i e j sono uguali, false altrimenti.
+     * <h4>Restituisce <code>true</code> se le righe i e j sono uguali, <code>false</code> altrimenti.</h4>
      * @param i indice di riga
      * @param j indice di riga
-     * @return true se le righe i e j sono uguali, false altrimenti
+     * @return <code>true</code> se le righe i e j sono uguali, <code>false</code> altrimenti
      */
     private boolean compare(int i, int j) {
         for (Attribute at : attributeSet) {
@@ -181,10 +182,10 @@ public class Data {
     }
 
     /**
-     * Restituisce il valore del centroide per l'attributo attribute.
+     * <h4>Restituisce il valore del centroide per l'attributo specificato.</h4>
      * @param idList lista degli indici di riga
      * @param attribute attributo
-     * @return valore del centroide per l'attributo attribute
+     * @return Il valore del centroide per l'attributo attribute
      */
     Object computePrototype(Set<Integer> idList, Attribute attribute) {
         if (attribute instanceof DiscreteAttribute) return computePrototype(idList, (DiscreteAttribute) attribute);
@@ -193,10 +194,10 @@ public class Data {
     }
 
     /**
-     * Retituisce il centroide rispetto ad un attributo discreto.
+     * <h4>Restituisce il centroide rispetto ad un attributo discreto.</h4>
      * @param idList lista degli indici di riga
      * @param attribute attributo discreto
-     * @return centroide rispetto ad attribute
+     * @return Il centroide rispetto all'attributo specificato
      */
     private String computePrototype(Set<Integer> idList, DiscreteAttribute attribute) {
         Iterator<String> it = attribute.iterator();
@@ -217,10 +218,10 @@ public class Data {
     }
 
     /**
-     * Retituisce il centroide rispetto ad un attributo conintuo.
+     * <h4>Restituisce il centroide rispetto ad un attributo continuo.</h4>
      * @param idList lista degli indici di riga
      * @param attribute attributo continuo
-     * @return centroide rispetto ad attribute
+     * @return Il centroide rispetto all'attributo specificato
      */
     private Double computePrototype(Set<Integer> idList, ContinuousAttribute attribute) {
         double sum = 0;

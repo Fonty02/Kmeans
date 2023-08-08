@@ -7,7 +7,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 /**
- * <h2> MainTest è la classe che funge da client per il server di clustering. </h2>
+ * <h2> La classe MainTest funge da client per il server di clustering. </h2>
  * <p>
  * Il client si connette al server e gli invia delle richieste.
  * In particolare il client può:
@@ -31,7 +31,7 @@ class MainTest {
 
 
     /**
-     * <h4> Costruttore di MainTest. </h4>
+     * <h4> Costruttore. </h4>
      * <p>
      * Si connette al server e inizializza i canali di input e output.
      * @param ip   l'indirizzo ip/dns del server
@@ -84,7 +84,7 @@ class MainTest {
      * </ul>
      * Invia al server il nome del file e riceve dal server un messaggio di conferma.
      * Se il messaggio di conferma è "OK" il metodo riceve dal server il clustering e lo stampa a video,
-     * altrimenti lancia un'eccezione di tipo ServerException.
+     * altrimenti lancia un'eccezione di tipo <code>ServerException</code>.
      *
      * @return Il clustering caricato dal file
      * @throws ServerException        se il server invia un messaggio di errore
@@ -123,7 +123,7 @@ class MainTest {
      *     <li>Password per accedere al database</li>
      * </ul>
      * Invia al server i dati inseriti e riceve dal server un messaggio di conferma.
-     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo ServerException.
+     * Se il messaggio di conferma non è "OK" il metodo lancia un'eccezione di tipo <code>ServerException</code>.
      * @throws ServerException        se il server invia un messaggio di errore
      * @throws IOException            se si verifica un errore di I/O
      * @throws ClassNotFoundException se si verifica un errore di classe

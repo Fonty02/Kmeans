@@ -6,19 +6,20 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * Classe che rappresenta un attributo discreto (stringa).
- * 
+ * <h2>La classe DiscreteAttribute che rappresenta un attributo discreto (stringa).</h2>
+ * <p>
  * Estende la classe astratta {@link Attribute} e implementa l'interfaccia {@link Iterable} per poter iterare sui valori del dominio dell'attributo.
+ * </p>
  */
 class DiscreteAttribute extends Attribute implements Iterable<String> {
 
     /**
-     * Insieme ordinato dei valori del dominio dell'attributo.
+     * <h4>Insieme ordinato dei valori del dominio dell'attributo.</h4>
      */
     private final TreeSet<String> values;
 
     /**
-     * Costruttore della classe.
+     * <h4>Costruttore dell'attributo discreto.</h4>
      *
      * @param name   nome dell'attributo
      * @param index  indice dell'attributo
@@ -31,20 +32,20 @@ class DiscreteAttribute extends Attribute implements Iterable<String> {
     }
 
     /**
-     * Restituisce l'iteratore per iterare sui valori del dominio dell'attributo.
+     * <h4>Restituisce l'iteratore per iterare sui valori del dominio dell'attributo.</h4>
      *
-     * @return iteratore per iterare sui valori del dominio dell'attributo
+     * @return L'iteratore per iterare sui valori del dominio dell'attributo
      */
     public Iterator<String> iterator() {
         return this.values.iterator();
     }
 
     /**
-     * Restituisce il numero di volte che il valore v compare nel dataset.
+     * <h4>Restituisce il numero di volte che il valore specificato compare nel dataset.</h4>
      * @param data dataset
      * @param idList l'insieme degli indici di riga
      * @param v valore
-     * @return numero di volte che il valore v compare nel dataset
+     * @return Il numero di volte che il valore specificato compare nel dataset
      */
     int frequency(Data data, Set<Integer> idList, String v) {
         int count = 0;

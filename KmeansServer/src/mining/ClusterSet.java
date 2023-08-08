@@ -7,26 +7,28 @@ import java.io.Serializable;
 
 
 /**
- * La classe ClusterSet modella l'insieme di cluster.
- * L'insieme di cluster è rappresentato da un array di cluster e da un indice che indica il numero di cluster presenti.
+ * <h2>La classe ClusterSet modella l'insieme di cluster.</h2>
+ * <p>L'insieme di cluster è rappresentato da un array di {@link Cluster} e da un indice che indica il numero di cluster presenti.</p>
+ * @see Cluster
  */
 public class ClusterSet implements Serializable {
 
     /**
-     * L'array di cluster.
+     * <h4>Array di Cluster.</h4>
      */
     private final Cluster[] C;
 
     /**
-     * L'indice che indica il numero di cluster presenti.
+     * <h4>Indice che indica il numero di cluster presenti.</h4>
      */
     private int i = 0;
 
 
     /**
-     * Costruisce un insieme di cluster con il numero di cluster specificato.
+     * <h4>Costruisce un insieme di cluster con il numero di cluster specificato.</h4>
      * @param k il numero di cluster
      * @throws OutOfRangeSampleSize se il numero di cluster è minore di 1
+     * @see NegativeArraySizeException
      */
     ClusterSet(int k) throws OutOfRangeSampleSize {
         try {
@@ -38,7 +40,7 @@ public class ClusterSet implements Serializable {
 
 
     /**
-     * Aggiunge un cluster all'insieme di cluster e incrementa l'indice.
+     * <h4>Aggiunge un cluster all'insieme di cluster e incrementa l'indice.</h4>
      * @param c il cluster da aggiungere
      */
     private void add(Cluster c) {
@@ -47,7 +49,7 @@ public class ClusterSet implements Serializable {
     }
 
     /**
-     * Inizializza i centroidi dei cluster con k tuple casuali del dataset, una per cluster.
+     * <h4>Inizializza i centroidi dei cluster con k tuple casuali del dataset, una per cluster.</h4>
      * @param data il dataset
      * @throws OutOfRangeSampleSize se il numero di tuple del dataset è minore del numero di cluster
      */
@@ -59,9 +61,9 @@ public class ClusterSet implements Serializable {
         }
     }
     /**
-     * Restituisce il cluster più vicino alla tupla specificata.
+     * <h4>Restituisce il cluster più vicino alla tupla specificata.</h4>
      * @param tuple la tupla
-     * @return <code>c</code> il cluster più vicino alla tupla
+     * @return Il cluster più vicino alla tupla
      */
     Cluster nearestCluster(Tuple tuple) {
         double min = tuple.getDistance(C[0].getCentroid());
@@ -78,10 +80,11 @@ public class ClusterSet implements Serializable {
     }
 
     /**
-     * Restituisce il cluster che contiene la tupla specificata.
-     * In caso di tupla che non appartiene a nessun cluster, restituisce <code>null</code>.
+     * <h4>Restituisce il cluster che contiene la tupla specificata.</h4>
+     * <p>
+     * In caso di tupla che non appartiene a nessun cluster, restituisce <code>null</code>.</p>
      * @param id l'indice della tupla
-     * @return <code>c</code> il cluster che contiene la tupla
+     * @return Il cluster che contiene la tupla
      */
     Cluster currentCluster(int id) {
         for (Cluster cluster : C) {
@@ -92,8 +95,9 @@ public class ClusterSet implements Serializable {
     }
 
     /**
-     * Calcola i nuovi centroidi dei cluster.
+     * <h4>Calcola i nuovi centroidi dei cluster.</h4>
      * @param data il dataset su cui calcolare i nuovi centroidi dei cluster
+     * @see Data
      */
     void updateCentroids(Data data) {
         for (Cluster cluster : C) {
@@ -102,8 +106,8 @@ public class ClusterSet implements Serializable {
     }
 
     /**
-     * Restituisce la stringa che rappresenta l'insieme di cluster.
-     * @return la stringa che rappresenta l'insieme di cluster
+     * <h4>Restituisce la stringa che rappresenta l'insieme di cluster.</h4>
+     * @return La stringa che rappresenta l'insieme di cluster
      */
     public String toString() {
         String str = "";
@@ -114,9 +118,10 @@ public class ClusterSet implements Serializable {
     }
 
     /**
-     * Restituisce la stringa che rappresenta le informazioni sull'insieme di cluster relative al dataset specificato.
+     * <h4>Restituisce la stringa che rappresenta le informazioni sull'insieme di cluster relative al dataset specificato.</h4>
      * @param data il dataset
-     * @return la stringa che rappresenta le informazioni sull'insieme di cluster relative al dataset specificato
+     * @return La stringa che rappresenta le informazioni sull'insieme di cluster relative al dataset specificato
+     * @see Data
      */
     public String toString(Data data) {
         String str = "";

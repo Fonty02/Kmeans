@@ -9,32 +9,32 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * La classe TableSchema permette di ottenere lo schema di una tabella del database relazionale.
+ * <h2>La classe TableSchema permette di ottenere lo schema di una tabella del database relazionale.</h2>
  */
 public class TableSchema {
 
     /**
-     * Riferimento al database.
+     * <h4>Riferimento al database.</h4>
      */
     private DbAccess db;
 
     /**
-     * La classe Column rappresenta una colonna della tabella.
-     * Una colonna viene rappresentata mediante il nome e il tipo di dato.
+     * <h2>La classe Column rappresenta una colonna della tabella.</h2>
+     * <p>Una colonna viene rappresentata mediante il nome e il tipo di dato.</p>
      */
     public class Column {
 
         /**
-         * Nome della colonna.
+         * <h4>Nome della colonna.</h4>
          */
         private final String name;
         /**
-         * Tipo di dato della colonna.
+         * <h4>Tipo di dato della colonna.</h4>
          */
         private final String type;
 
         /**
-         * Costruttore della classe Column.
+         * <h4>Costruttore della classe.</h4>
          * @param name Nome della colonna.
          * @param type Tipo di dato della colonna.
          */
@@ -44,24 +44,24 @@ public class TableSchema {
         }
 
         /**
-         * Restituisce il nome della colonna.
-         * @return Nome della colonna.
+         * <h4>Restituisce il nome della colonna.</h4>
+         * @return Il nome della colonna.
          */
         public String getColumnName() {
             return name;
         }
 
         /**
-         * Restituisce il tipo di dato della colonna.
-         * @return Tipo di dato della colonna.
+         * <h4>Restituisce il tipo di dato della colonna.</h4>
+         * @return Il tipo di dato della colonna.
          */
         public boolean isNumber() {
             return type.equals("number");
         }
 
         /**
-         * Restituisce la stringa che rappresenta la colonna.
-         * @return Stringa che rappresenta la colonna.
+         * <h4>Restituisce la stringa che rappresenta la colonna.</h4>
+         * @return La stringa che rappresenta la colonna.
          */
         public String toString() {
             return name + ":" + type;
@@ -70,15 +70,15 @@ public class TableSchema {
     }
 
     /**
-     * Lista delle colonne della tabella.
+     * <h4>Lista delle colonne della tabella.</h4>
      */
     private List<Column> tableSchema = new ArrayList<>();
 
     /**
-     * Costruttore della classe TableSchema.
+     * <h4>Costruttore della classe</h4>
      * @param db Riferimento al database.
      * @param tableName Nome della tabella.
-     * @throws SQLException Eccezione lanciata in caso di errore nell'esecuzione della query.
+     * @throws SQLException in caso di errore nell'esecuzione della query.
      */
     public TableSchema(DbAccess db, String tableName) throws SQLException {
         this.db = db;
@@ -108,17 +108,17 @@ public class TableSchema {
     }
 
     /**
-     * Restituisce il numero di colonne della tabella.
-     * @return Numero di colonne della tabella.
+     * <h4>Restituisce il numero di colonne della tabella.</h4>
+     * @return Il numero di colonne della tabella.
      */
     public int getNumberOfAttributes() {
         return tableSchema.size();
     }
 
     /**
-     * Restituisce la colonna della tabella all'indice specificato.
+     * <h4>Restituisce la colonna della tabella all'indice specificato.</h4>
      * @param index Indice della colonna.
-     * @return Colonna della tabella all'indice specificato.
+     * @return La colonna della tabella all'indice specificato.
      */
     public Column getColumn(int index) {
         return tableSchema.get(index);

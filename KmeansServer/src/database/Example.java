@@ -4,18 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * La classe Example rappresenta una transazione del database.
- * Una transazione viene rappresentata mediante una lista di oggetti.
+ * <h2>La classe Example rappresenta una transazione del database.</h2>
+ * <p>Una transazione viene rappresentata mediante una lista di oggetti.</p>
  */
 public class Example implements Comparable<Example> {
 
     /**
-     * Lista di oggetti che rappresentano una transazione.
+     * <h4>Costruttore della classe.</h4>
+     */
+    Example() {}
+
+    /**
+     * <h4>Lista di oggetti che rappresentano una transazione.</h4>
      */
     private final List<Object> example = new ArrayList<>();
 
     /**
-     * Aggiunge un oggetto alla transazione.
+     * <h4>Aggiunge un oggetto alla transazione.</h4>
      * @param o Oggetto da aggiungere alla transazione.
      */
     void add(Object o) {
@@ -23,17 +28,17 @@ public class Example implements Comparable<Example> {
     }
 
     /**
-     * Restituisce l'oggetto nella posizione specificata.
+     * <h4>Restituisce l'oggetto nella posizione specificata.</h4>
      * @param i Posizione dell'oggetto da restituire.
-     * @return Oggetto in posizione i.
+     * @return L'oggetto in posizione i.
      */
     public Object get(int i) {
         return example.get(i);
     }
 
     /**
-     * compareTo confronta due transazioni.
-     * Due transizioni sono uguali se hanno gli stessi oggetti nella stessa posizione.
+     * <h4>Confronta due transazioni.</h4>
+     * <p>Due transizioni sono uguali se hanno gli stessi oggetti nella stessa posizione.</p>
      * @param ex la transazione da confrontare.
      * @return 0 se le transizioni sono uguali, un altro intero se sono diverse.
      */
@@ -47,8 +52,8 @@ public class Example implements Comparable<Example> {
     }
 
     /**
-     * Restituisce la stringa che rappresenta la transazione.
-     * @return Stringa che rappresenta la transazione.
+     * <h4>Restituisce la stringa che rappresenta la transazione.</h4>
+     * @return La stringa che rappresenta la transazione.
      */
     public String toString() {
         String str = "";
