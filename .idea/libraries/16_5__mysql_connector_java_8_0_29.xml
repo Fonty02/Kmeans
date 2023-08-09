@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="16.5. mysql-connector-java-8.0.29">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/KmeansServer/src/libs/16.5. mysql-connector-java-8.0.29.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
