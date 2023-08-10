@@ -1,13 +1,13 @@
-\section{Features}
+\section{Implementazioni}
 \subsection{Progetto Base}
-\noindent La versione base del progetto consiste in un'architettura client/server che permette all'utente la scoperta/lettura di cluster. Il server dovrà essere eseguito su una macchina con un database MySQL in esecuzione. 
-Il servizio sara' raggiungibile sulla porta 8080, e potrà comunicare con diversi client contemporaneamente. 
+\noindent La versione base del progetto consiste in un'architettura client/server che permette all'utente lo studio di cluster. Il server dovrà essere eseguito su una macchina con un database MySQL in esecuzione. 
+Il servizio sarà raggiungibile sulla porta 8080, e potrà comunicare con diversi client contemporaneamente. 
 \\ I servizi offerti dal server all'utente tramite il client CLI sono i seguenti:
 \begin{itemize}[label=-]
-  \item \textbf{lettura di cluster} fornendo al server il path del file in cui sono savati i cluster da recuperare 
   \item \textbf{scoperta di cluster} fornendo al server il nome della tabella presente nel database ed il numero di cluster da scoprire
-  \item \textbf{salvataggio dei cluster} generati nella macchina dove il server viene eseguito, dove potranno essere successivamente letti. 
+  \item \textbf{salvataggio dei cluster} generati nella macchina dove il server viene eseguito. Il salvataggio avverrà in automatico alla generazione di nuovi cluster
+  \item \textbf{lettura dei centroidi dei cluster} fornendo al server il path del file in cui sono salvati i centroidi da recuperare 
 \end{itemize}
-Il server salverà informazioni relativi agli errori nel file di logging mentre nell'interfaccia CLI notificherà l'utente quando la comunicazione si interrompe o se vi sono problemi con gli input dati. Il client da riga di comando permette di collegarsi ad una macchina che sta eseguendo un'istanza del server. L'utente nel menù avra le due opzioni di lettura o scoperta di cluster, mentre il salvataggio avverrà in automatico lato server alla generazione di nuovi cluster.
+Il server salverà informazioni relativi agli errori nel file di logging mentre nell'interfaccia CLI notificherà l'utente quando la comunicazione si interrompe o se vi sono problemi con gli input dati. Il client da riga di comando permette di collegarsi ad una macchina che sta eseguendo un'istanza del server. L'utente nel menù potrà scegliere tra due opzioni: scoperta di cluster e lettura da file.
 
 \subsection{Estensione}
