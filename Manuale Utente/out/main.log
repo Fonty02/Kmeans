@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.27)  31 AUG 2023 16:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.8.27)  1 SEP 2023 17:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1142,7 +1142,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[4])
+[4]
+<img/app1.png, id=145, 644.4075pt x 1117.17375pt>
+File: img/app1.png Graphic file (type png)
+<use img/app1.png>
+Package pdftex.def Info: img/app1.png  used on input line 47.
+(pdftex.def)             Requested size: 161.10147pt x 279.29276pt.
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1150,8 +1156,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[5] (./testcli.tex
-<img/test1.png, id=150, 483.30562pt x 47.42719pt>
+[5 <./img/app1.png>] (./testcli.tex
+<img/test1.png, id=152, 483.30562pt x 47.42719pt>
 File: img/test1.png Graphic file (type png)
 <use img/test1.png>
 Package pdftex.def Info: img/test1.png  used on input line 6.
@@ -1166,7 +1172,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--8
 
  []
 
-<img/test2.png, id=151, 467.49657pt x 38.39343pt>
+<img/test2.png, id=153, 467.49657pt x 38.39343pt>
 File: img/test2.png Graphic file (type png)
 <use img/test2.png>
 Package pdftex.def Info: img/test2.png  used on input line 10.
@@ -1181,7 +1187,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--12
 
  []
 
-<img/test3.png, id=152, 483.30562pt x 34.62938pt>
+<img/test3.png, id=154, 483.30562pt x 34.62938pt>
 File: img/test3.png Graphic file (type png)
 <use img/test3.png>
 Package pdftex.def Info: img/test3.png  used on input line 14.
@@ -1196,7 +1202,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--16
 
  []
 
-<img/test4.png, id=153, 483.30562pt x 32.37094pt>
+<img/test4.png, id=155, 483.30562pt x 32.37094pt>
 File: img/test4.png Graphic file (type png)
 <use img/test4.png>
 Package pdftex.def Info: img/test4.png  used on input line 18.
@@ -1211,7 +1217,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--20
 
  []
 
-<img/test5.png, id=154, 483.30562pt x 112.92188pt>
+<img/test5.png, id=156, 483.30562pt x 112.92188pt>
 File: img/test5.png Graphic file (type png)
 <use img/test5.png>
 Package pdftex.def Info: img/test5.png  used on input line 22.
@@ -1221,7 +1227,7 @@ Overfull \hbox (245.80246pt too wide) in paragraph at lines 22--23
 [][] 
  []
 
-<img/test6.png, id=155, 235.63031pt x 137.7647pt>
+<img/test6.png, id=157, 235.63031pt x 137.7647pt>
 File: img/test6.png Graphic file (type png)
 <use img/test6.png>
 Package pdftex.def Info: img/test6.png  used on input line 26.
@@ -1244,7 +1250,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [6 <./img/test1.png> <./img/test2.png> <./img/test3.png> <./img/test4.png> <./img/test5.png>]
-<img/test7.png, id=171, 335.00156pt x 106.89937pt>
+<img/test7.png, id=173, 335.00156pt x 106.89937pt>
 File: img/test7.png Graphic file (type png)
 <use img/test7.png>
 Package pdftex.def Info: img/test7.png  used on input line 31.
@@ -1254,7 +1260,7 @@ Overfull \hbox (127.15904pt too wide) in paragraph at lines 31--32
 [][] 
  []
 
-<img/test8.png, id=172, 206.27063pt x 227.34938pt>
+<img/test8.png, id=174, 206.27063pt x 227.34938pt>
 File: img/test8.png Graphic file (type png)
 <use img/test8.png>
 Package pdftex.def Info: img/test8.png  used on input line 35.
@@ -1269,7 +1275,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--37
 
  []
 
-<img/test9.png, id=173, 359.84438pt x 97.86563pt>
+<img/test9.png, id=175, 359.84438pt x 97.86563pt>
 File: img/test9.png Graphic file (type png)
 <use img/test9.png>
 Package pdftex.def Info: img/test9.png  used on input line 49.
@@ -1279,7 +1285,7 @@ Overfull \hbox (147.03333pt too wide) in paragraph at lines 49--50
 [][] 
  []
 
-<img/test10.png, id=174, 413.29407pt x 586.44093pt>
+<img/test10.png, id=176, 413.29407pt x 586.44093pt>
 File: img/test10.png Graphic file (type png)
 <use img/test10.png>
 Package pdftex.def Info: img/test10.png  used on input line 53.
@@ -1302,7 +1308,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [7 <./img/test6.png> <./img/test7.png> <./img/test8.png> <./img/test9.png>]
-<img/test12.png, id=183, 307.1475pt x 103.88812pt>
+<img/test12.png, id=185, 307.1475pt x 103.88812pt>
 File: img/test12.png Graphic file (type png)
 <use img/test12.png>
 Package pdftex.def Info: img/test12.png  used on input line 61.
@@ -1312,7 +1318,7 @@ Overfull \hbox (104.87576pt too wide) in paragraph at lines 61--62
 [][] 
  []
 
-<img/test13.png, id=184, 484.05844pt x 282.30469pt>
+<img/test13.png, id=186, 484.05844pt x 282.30469pt>
 File: img/test13.png Graphic file (type png)
 <use img/test13.png>
 Package pdftex.def Info: img/test13.png  used on input line 65.
@@ -1335,7 +1341,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [8 <./img/test10.png> <./img/test12.png>]
-<img/test14.png, id=193, 483.30562pt x 210.03468pt>
+<img/test14.png, id=195, 483.30562pt x 210.03468pt>
 File: img/test14.png Graphic file (type png)
 <use img/test14.png>
 Package pdftex.def Info: img/test14.png  used on input line 70.
@@ -1350,6 +1356,96 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--72
 
  []
 
+<img/app3.png, id=196, 578.16pt x 1284.8pt>
+File: img/app3.png Graphic file (type png)
+<use img/app3.png>
+Package pdftex.def Info: img/app3.png  used on input line 80.
+(pdftex.def)             Requested size: 115.62994pt x 256.95544pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[9 <./img/test13.png> <./img/test14.png>]
+<img/app2.png, id=204, 633.36626pt x 1284.8pt>
+File: img/app2.png Graphic file (type png)
+<use img/app2.png>
+Package pdftex.def Info: img/app2.png  used on input line 85.
+(pdftex.def)             Requested size: 126.671pt x 256.95544pt.
+<img/app4.png, id=205, 578.16pt x 1284.8pt>
+File: img/app4.png Graphic file (type png)
+<use img/app4.png>
+Package pdftex.def Info: img/app4.png  used on input line 92.
+(pdftex.def)             Requested size: 115.62994pt x 256.95544pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[10 <./img/app3.png> <./img/app2.png>]
+<img/app5.png, id=214, 578.16pt x 1284.8pt>
+File: img/app5.png Graphic file (type png)
+<use img/app5.png>
+Package pdftex.def Info: img/app5.png  used on input line 97.
+(pdftex.def)             Requested size: 115.62994pt x 256.95544pt.
+<img/app6.png, id=215, 1729.96312pt x 871.75688pt>
+File: img/app6.png Graphic file (type png)
+<use img/app6.png>
+Package pdftex.def Info: img/app6.png  used on input line 102.
+(pdftex.def)             Requested size: 467.0963pt x 235.3775pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[11 <./img/app4.png> <./img/app5.png>]
+<img/app7.png, id=222, 578.16pt x 1284.8pt>
+File: img/app7.png Graphic file (type png)
+<use img/app7.png>
+Package pdftex.def Info: img/app7.png  used on input line 108.
+(pdftex.def)             Requested size: 115.62994pt x 256.95544pt.
+<img/app8.png, id=223, 578.16pt x 1284.8pt>
+File: img/app8.png Graphic file (type png)
+<use img/app8.png>
+Package pdftex.def Info: img/app8.png  used on input line 113.
+(pdftex.def)             Requested size: 115.62994pt x 256.95544pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[12 <./img/app6.png> <./img/app7.png>]
+<img/app9.png, id=233, 867.24pt x 877.77937pt>
+File: img/app9.png Graphic file (type png)
+<use img/app9.png>
+Package pdftex.def Info: img/app9.png  used on input line 118.
+(pdftex.def)             Requested size: 303.53854pt x 307.22739pt.
+<img/app10.png, id=234, 578.16pt x 1284.8pt>
+File: img/app10.png Graphic file (type png)
+<use img/app10.png>
+Package pdftex.def Info: img/app10.png  used on input line 123.
+(pdftex.def)             Requested size: 115.62994pt x 256.95544pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[13 <./img/app8.png> <./img/app9.png>]
+<img/app11.png, id=241, 862.72313pt x 852.18375pt>
+File: img/app11.png Graphic file (type png)
+<use img/app11.png>
+Package pdftex.def Info: img/app11.png  used on input line 128.
+(pdftex.def)             Requested size: 301.95761pt x 298.26877pt.
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1358,23 +1454,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[9 <./img/test13.png> <./img/test14.png>] (out/main.aux)
+[14 <./img/app10.png> <./img/app11.png>] (out/main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: FA338DE27DDE50797C57DFEA9CA68157;1835.
  ) 
 Here is how much of TeX's memory you used:
- 39390 strings out of 477529
- 877960 string characters out of 5829600
+ 39492 strings out of 477529
+ 879509 string characters out of 5829600
  1343070 words of memory out of 5000000
- 57545 multiletter control sequences out of 15000+600000
+ 57614 multiletter control sequences out of 15000+600000
  481344 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 109i,11n,105p,791b,891s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,12n,105p,791b,891s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on out/main.pdf (10 pages, 604413 bytes).
+Output written on out/main.pdf (15 pages, 1711268 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 181 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 232 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 293 PDF objects out of 1000 (max. 8388607)
+ 217 compressed objects within 3 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 287 words of extra memory for PDF output out of 10000 (max. 10000000)
 

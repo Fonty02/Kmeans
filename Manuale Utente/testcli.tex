@@ -73,3 +73,58 @@
 \end{enumerate}
 
 \subsection{App}
+\begin{enumerate}
+  \item \textbf{Esecuzione del client senza inserire tutti i parametri}: nel caso in cui nella schermata di apertura l'utente non inserisca tutti i parametri richiesti, riceverà un messaggio di errore.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{img/app3.png}
+  \end{figure}
+  \item \textbf{Esecuzione del client con server offline, con porta errata, con IP/DNS inesistente o con telefono offline}: una volta inseriti i dati, verranno richiesti all'utente le informazioni riguardanti il database. A questo punto l'utente proverà a connettersi al server e al database, ricevendo un messaggio di errore:
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{img/app2.png}
+  \end{figure}
+  \item \textbf{Esecuzione con parametri corretti}: quando il server è avviato e vengono immessi i parametri corretti all'avvio dell'applicazione (o tramite l'apposito tab per cambiare server) l'utente può connettersi al database. 
+  \begin{itemize}[label=-]
+    \item \textbf{Connessione al database}: se l'utente inserisce i parametri del database corretti l'applicazione si connetterà al server e darà la possibilità all'utente di selezionare il numero di cluster.
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.2]{img/app4.png}
+    \end{figure}
+    Se l'utente non compila tutti i campi, riceverà un errore.
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.2]{img/app5.png}
+    \end{figure}
+    Se l'utente non compila correttamente qualche campo, riceverà un errore a seconda del campo non compilato correttamente.
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.27]{img/app6.png}
+    \end{figure}
+  \end{itemize}
+  \item \textbf{Esecuzione dell'algoritmo}: una volta selezionato il numero di cluster, l'applicazione eseguirà l'algoritmo di K-means quando viene premuto il pulsante e mostrerà all'utente i risultati. 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{img/app7.png}
+  \end{figure}
+  \item \textbf{Caricamento di un file}: l'utente può caricare un file di cluster serializzato sul server. Per farlo basta utilizzare l'apposito tab e cliccando su "Seleziona un file" l'utente può scegliere il file da caricare dall'elenco dei file presenti sul server. 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{img/app8.png}
+  \end{figure}
+  Nel caso in cui vi sia un file non valido lato server, o se l'utente non sceglie alcun file, cliccando il pulsante "Recupera file" riceverà un errore. 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{img/app9.png}
+  \end{figure}
+  Se il server non è corretto, l'utente riceverà un errore nel momento in cui proverà ad aprire l'elenco dei file.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.2]{img/app10.png}
+  \end{figure}
+  \item \textbf{Cambio server}: nell'apposito tab l'utente può cambiare il server a cui connettersi. Nel caso in cui non vengano compilati tutti i campi, l'utente riceverà un errore.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.35]{img/app11.png}
+  \end{figure}
+\end{enumerate}
