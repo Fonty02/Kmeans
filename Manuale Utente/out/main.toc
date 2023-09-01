@@ -6,6 +6,8 @@
 \contentsline {subsection}{\numberline {2.2}Estensione}{3}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Installazione e avvio}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Requisiti Server}{4}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Base}{4}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Estensione}{4}{subsubsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.2}Requisiti Client}{4}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}CLI}{4}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}App}{4}{subsubsection.3.2.2}%

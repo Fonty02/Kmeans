@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1693580484 "c:/Users/acurr/Desktop/Progetti_Uni/manuale/Manuale Utente/main.tex" "out/main.pdf" "main" 1693580490
+["pdflatex"] 1693581312 "c:/Users/acurr/Desktop/Progetti_Uni/manuale/Manuale Utente/main.tex" "out/main.pdf" "main" 1693581350
   "c:/Users/acurr/Desktop/Progetti_Uni/manuale/Manuale Utente/main.tex" 1691683023 1185 06632a120589989774d32573379cee99 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1661603816 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1661607332 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -280,7 +280,7 @@
   "c:/texlive/2022/texmf.cnf" 1661608495 713 614551405fc44b98efbf516466e3c909 ""
   "front.tex" 1691682778 1406 8a401c67c536b99c0e3c1e0d6c965584 ""
   "funct.tex" 1693489835 2043 7bdffe29d88fcd69f7f848e88fb0f974 ""
-  "guida.tex" 1693494640 2936 79014b455a5160d7529b09a0d431b7bf ""
+  "guida.tex" 1693581303 2628 c1337ca8a6415a9eb6fa5c1a4ecd212d ""
   "img/app1.png" 1693494117 60117 d5401c540c9e15a06194e395e53dc457 ""
   "img/app10.png" 1693579392 31601 64348c970f297e634a0d49d274893045 ""
   "img/app11.png" 1693580440 277277 805c2ff6bfde792cb9f92f98e3004211 ""
@@ -309,9 +309,9 @@
   "img/test9.png" 1691157023 10671 d953b67ceca769473beb51f6c1302822 ""
   "intro.tex" 1693489841 2100 4919fe18229e381519a98fcc029eb11c ""
   "main.tex" 1691683023 1185 06632a120589989774d32573379cee99 ""
-  "out/main.aux" 1693580490 2955 c24e8da1e86b58142d138aac768ebdcd "pdflatex"
-  "out/main.out" 1693580490 1835 fa338de27dde50797c57dfea9ca68157 "pdflatex"
-  "out/main.toc" 1693580490 1423 7c17328fd7c40a06890a563af274535e "pdflatex"
+  "out/main.aux" 1693581350 3203 f15bd1c61885438070b59c5f7908c8e8 "pdflatex"
+  "out/main.out" 1693581350 2041 178c753078b6277f900dcd3586805833 "pdflatex"
+  "out/main.toc" 1693581350 1589 d027b9d2746fa3ee2d26c3e571f0c702 "pdflatex"
   "pream.tex" 1666333000 6078 bfadf3d4017d8ee62488557f17916a96 ""
   "testcli.tex" 1693580483 8614 d0112c77076d56f4a3899a0d0d05decd ""
   (generated)
