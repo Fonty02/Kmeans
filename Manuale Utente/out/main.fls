@@ -1633,6 +1633,7 @@ INPUT funct.tex
 INPUT ./funct.tex
 INPUT ./funct.tex
 INPUT funct.tex
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 INPUT ./guida.tex
 INPUT ./guida.tex
 INPUT ./guida.tex
@@ -1640,10 +1641,6 @@ INPUT guida.tex
 INPUT ./guida.tex
 INPUT ./guida.tex
 INPUT guida.tex
-INPUT c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
-INPUT c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
-INPUT c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
-INPUT c:/texlive/2022/texmf-dist/tex/latex/base/omscmr.fd
 INPUT ./img/app1.png
 INPUT ./img/app1.png
 INPUT img/app1.png
@@ -1780,3 +1777,4 @@ INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+INPUT c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
