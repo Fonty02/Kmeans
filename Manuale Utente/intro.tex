@@ -1,0 +1,15 @@
+\section{Introduzione}
+
+Il programma sviluppato fa uso dell'algoritmo di clustering \textbf{\textit{K-means}} per analizzare informazioni estratte da tabelle di un database, sfruttando il servizio MySQL.
+\\ Il \textit{K-means} è un algoritmo di clustering, una tecnica di apprendimento non supervisionato utilizzata per suddividere un insieme di dati in gruppi omogenei chiamati \textit{cluster}. 
+L'obiettivo del \textit{K-means} è di assegnare ogni dato al cluster più vicino, in modo che i punti all'interno di ciascun cluster siano simili tra loro e i punti tra cluster diversi siano diversi. 
+Ecco come funziona l'algoritmo \textit{K-means}: 
+\begin{enumerate}
+  \item \textbf{Inizializzazione}: Si inizia scegliendo il numero \textit{k} desiderato di \textit{cluster}. L'algoritmo crea \textit{k} partizioni e assegna casualmente \textit{k} punti come centroidi iniziali, uno per partizione. Un centroide rappresenta il centro del \textit{cluster}.
+  \item \textbf{Assegnazione}: Ciascuna transazione viene assegnata al suo \textit{cluster}. L'appartenenza  dipende dalla distanza della transazione dal centroide del \textit{cluster}, l'obiettivo è minimizzare la distanza tra centroide e transazione.
+  \item \textbf{Aggiornamento dei centroidi}: Una volta assegnati tutti i punti ai \textit{cluster}, i centroidi vengono aggiornati calcolando la media delle posizioni dei punti all'interno di ciascun \textit{cluster}. Questa media diventa il nuovo centroide per il \textit{cluster} corrispondente.
+  \item \textbf{Ripetizione}: I passi 2 e 3 vengono ripetuti fino a quando i centroidi smettono di cambiare o si raggiunge un numero massimo di iterazioni.
+  \item \textbf{Risultato}: Alla fine delle iterazioni si ottiene un insieme di \textit{k} \textit{cluster} e ogni transazione sarà stata assegnata al \textit{cluster} più vicino.
+\end{enumerate}
+
+\noindent È importante notare che il risultato finale può variare a seconda della scelta iniziale dei centroidi. In alcuni casi, l'algoritmo può convergere verso un minimo locale anziché verso il risultato ottimale. 
