@@ -21,7 +21,6 @@ public class KMeansMiner {
      * @param k il numero di cluster da creare nel clusterSet
      * @throws OutOfRangeSampleSize se il numero di cluster specificato è minore di 1
      */
-
     public KMeansMiner(int k) throws OutOfRangeSampleSize {
         C = new ClusterSet(k);
     }
