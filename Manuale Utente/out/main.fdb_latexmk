@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1693759579 "c:/Users/acurr/Desktop/Progetti_Uni/manuale/Manuale Utente/main.tex" "out/main.pdf" "main" 1693759584
-  "c:/Users/acurr/Desktop/Progetti_Uni/manuale/Manuale Utente/main.tex" 1691683023 1185 06632a120589989774d32573379cee99 ""
+["pdflatex"] 1693824817 "c:/Users/acurr/Desktop/Progetti_Uni/kmb/Manuale Utente/main.tex" "out/main.pdf" "main" 1693824825
+  "c:/Users/acurr/Desktop/Progetti_Uni/kmb/Manuale Utente/main.tex" 1691683023 1185 06632a120589989774d32573379cee99 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1661603816 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1661607332 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1661608458 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -281,7 +281,7 @@
   "c:/texlive/2022/texmf.cnf" 1661608495 713 614551405fc44b98efbf516466e3c909 ""
   "front.tex" 1691682778 1406 8a401c67c536b99c0e3c1e0d6c965584 ""
   "funct.tex" 1693671312 2119 dc99bcce0c83bbdb7c6a6ac4e276f26c ""
-  "guida.tex" 1693671284 3450 f523597823fdf79d672b001a514b62b4 ""
+  "guida.tex" 1693824815 3457 012bf8422a7810ef802897e602fd8893 ""
   "img/app1.png" 1693494117 60117 d5401c540c9e15a06194e395e53dc457 ""
   "img/app10.png" 1693579392 31601 64348c970f297e634a0d49d274893045 ""
   "img/app11.png" 1693580440 277277 805c2ff6bfde792cb9f92f98e3004211 ""
@@ -311,9 +311,9 @@
   "img/test9.png" 1691157023 10671 d953b67ceca769473beb51f6c1302822 ""
   "intro.tex" 1693489841 2100 4919fe18229e381519a98fcc029eb11c ""
   "main.tex" 1691683023 1185 06632a120589989774d32573379cee99 ""
-  "out/main.aux" 1693759583 3041 2ccaf58822d4ceef6e8c9938228bb52b "pdflatex"
-  "out/main.out" 1693759583 2041 178c753078b6277f900dcd3586805833 "pdflatex"
-  "out/main.toc" 1693759583 1589 0b9350d54621e6c42d5341fd58459d68 "pdflatex"
+  "out/main.aux" 1693824825 3041 2ccaf58822d4ceef6e8c9938228bb52b "pdflatex"
+  "out/main.out" 1693824825 2041 178c753078b6277f900dcd3586805833 "pdflatex"
+  "out/main.toc" 1693824825 1589 0b9350d54621e6c42d5341fd58459d68 "pdflatex"
   "pream.tex" 1666333000 6078 bfadf3d4017d8ee62488557f17916a96 ""
   "testcli.tex" 1693759577 8958 6d0af96b0be620a0283e2fc0b25516dc ""
   (generated)
